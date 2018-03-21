@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2160</x>
+      <y>890</y>
+      <w>330</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::Object/
+-
+int id;
+ObjectType type;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2100</x>
+      <y>1130</y>
+      <w>490</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::Scene : Core::Object/ -
+-
+virtual void update(float delta) = 0;
+virtual void draw(float delta) = 0;
+virtual void destroy() = 0;
+virtual void load(float * progress) = 0;
+virtual void start() = 0;
+virtual void end() = 0;
+virtual void save(DataManager * dataManager) = 0;
+
+	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2290</x>
+      <y>950</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2860</x>
+      <y>1130</y>
+      <w>540</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::DataManager/
+-
+virtual void getObjectData(std::vector&lt;ObjectData&gt; * data , float * progress) =0;
+virtual void startSaveChain()=0;
+virtual void save(ObjectData objectData)=0;
+virtual void save()=0;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2580</x>
+      <y>1120</y>
+      <w>300</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2990</x>
+      <y>590</y>
+      <w>510</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+/ObjectData/
+-
+bool hasKey(std::string key, bool optional = true)
+
+std::string getString(std::string key, bool optional = true)
+ int getInt(std::string key, bool optional = true)
+bool getBool(std::string key, bool optional = true)
+float getFloat(std::string key, bool optional = true)
+
+void add(Pair&lt;std::string, std::string&gt; pair)
+void setString(std::string key, std::string val)
+void setInt(std::string key, int val)
+void setFloat(std::string key, float val)
+void setBool(std::string key, bool flag)
+
+void print();
+std::string toString();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3150</x>
+      <y>870</y>
+      <w>30</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2090</x>
+      <y>1840</y>
+      <w>450</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+/ObjectManager/
+-
+MAX_OBJECTS 1000
+-
+bool add(Object * o, bool fixedId = false);
+bool remove(Object * o);
+Object * get(int id);
+virtual void freeObjects();
+virtual Object * getFirst();
+virtual Object * getNext();
+int getObjectCount() const;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2080</x>
+      <y>1450</y>
+      <w>510</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::SceneManager : ObjectManager/
+-
+virtual void start() = 0;
+virtual void startScene(Scene * scene) = 0;
+virtual void startScene(int id) = 0;
+virtual void loadScene(Scene * scene) = 0;
+virtual void loadScene(int id) = 0;
+virtual void endScene(Scene * scene) = 0;
+virtual void endScene(int id) = 0;
+virtual void baseUpdate() = 0;
+virtual void update(float delta) = 0;
+virtual void draw(float delta) = 0;
+virtual void save() = 0;
+virtual void destroy() = 0;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2320</x>
+      <y>1330</y>
+      <w>30</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2310</x>
+      <y>1720</y>
+      <w>30</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>1350</y>
+      <w>470</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::Window/
+-
+virtual bool isOpen() const = 0;
+virtual void clear() = 0;
+virtual void display() = 0;
+virtual void draw(DreamEngine::Core::Drawable * drawable) = 0;
+virtual void close() = 0;
+virtual void show(bool flag=true) = 0;
+virtual sf::RenderWindow * getWindow() = 0;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1390</x>
+      <y>970</y>
+      <w>470</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::Drawable : Core::Object/
+-
+virtual void draw() = 0;
+virtual void onDestroy() = 0;
+virtual void load() = 0;
+virtual ObjectData save() = 0;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>1100</y>
+      <w>30</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1850</x>
+      <y>880</y>
+      <w>330</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1940</x>
+      <y>460</y>
+      <w>570</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::WorldObject : Core::Object/
+-
+bool destroyObject = false;
+bool isColliding = false;
+-
+virtual void instantiate(ObjectData data) = 0;
+virtual void destroy() = 0;
+virtual void onDestroy() = 0;
+virtual void draw(float delta) = 0;
+virtual ObjectData save() = 0;
+
+void beginCollision();
+void endCollision();
+virtual void beginActorCollision(void * other, b2Contact * contact) = 0;
+virtual void endActorCollision(void * other, b2Contact * contact) = 0;
+virtual void beginShapeCollision(void * other, b2Contact * contact) = 0;
+virtual void endShapeCollision(void * other, b2Contact * contact) = 0;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2500</x>
+      <y>680</y>
+      <w>510</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>490.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2300</x>
+      <y>720</y>
+      <w>30</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2340</x>
+      <y>280</y>
+      <w>450</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+/Core::Shape : Core::WorldObject/
+-
+Actor * parent;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1760</x>
+      <y>280</y>
+      <w>450</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+/ Core::Actor : Core::WorldObject/
+-
+virtual void update(float delta) = 0;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>370</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2390</x>
+      <y>370</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2200</x>
+      <y>270</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2850</x>
+      <y>1490</y>
+      <w>510</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Core::Builder/
+-
+virtual void build(std::vector&lt;ObjectData&gt; data, float * progress) = 0;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2720</x>
+      <y>2160</y>
+      <w>510</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>/Builder/
+-
+void addBuilder(DreamEngine::Core::ObjectBuilder* customBuilder);
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3220</x>
+      <y>2180</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3380</x>
+      <y>2120</y>
+      <w>540</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>/ObjectBuilder/
+-
+SceneManager * sceneManager;
+Window * window;
+CameraManager * cameraManager;
+-
+virtual bool doesBuild(OBJECTS type);
+virtual void build(ObjectData data, OBJECTS type) = 0;
+ObjectBuilderDefinition builderComponents;
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2580</x>
+      <y>1700</y>
+      <w>900</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;880.0;10.0;880.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1490</y>
+      <w>1680</w>
+      <h>670</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;650.0;1660.0;650.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>2270</y>
+      <w>300</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>/CameraManager/
+-
+Camera * get(Cameras camera);
+void draw(sf::RenderWindow * window);
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1130</x>
+      <y>1880</y>
+      <w>440</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>/Window/
+-
+virtual bool isOpen() const override;
+virtual void clear() override;
+virtual void display() override;
+virtual void draw(Core::Drawable * drawable) override;
+virtual void close() override;
+virtual void show(bool flag = true) override;
+sf::RenderWindow * getWindow() const;
+void setCameraManager(CameraManager * cameraManager);
+
+Timer frameTimer;
+FPSCounter fpsCounter;
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1430</x>
+      <y>1490</y>
+      <w>30</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1340</x>
+      <y>2130</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>2320</y>
+      <w>580</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/Camera/
+-
+virtual void move(sf::Vector2f offset);
+virtual void setCameraScreenPosition(sf::Vector2f position);
+virtual void setCameraWorldPosition(b2Vec2 position);
+virtual void setViewport(float ratioX, float ratioY, float widthRatio, float heightRatio);
+virtual void rotate(float degrees);
+virtual void setRotation(float degrees);
+virtual b2Vec2 getWindowWorldSize();
+virtual sf::View getView();
+virtual sf::Vector2f getScreenPosition();
+virtual void draw(Core::Drawable * drawable);
+virtual void display();
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>2310</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>1000</y>
+      <w>470</w>
+      <h>1340</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>450.0;10.0;10.0;10.0;10.0;1320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>2260</y>
+      <w>200</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Timer
+-
+		virtual void start();
+		virtual void restart();
+		virtual float getElapsedTime();
+
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1560</x>
+      <y>2130</y>
+      <w>50</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;130.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1480</x>
+      <y>2390</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FPSCounter
+-
+int getFrames();
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1520</x>
+      <y>2130</y>
+      <w>30</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;260.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>490</y>
+      <w>390</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/Animation/
+-
+std::string getName() const;
+virtual sf::IntRect update();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>190</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/struct Frame/
+-
+float duration
+sf::Vector2i size
+sf::Vector2i offset
+
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1390</x>
+      <y>480</y>
+      <w>340</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+AnimationManager : Core::ObjectManager
+-
+Animation * getAnimation(std::string name);
+		Animation * get(int index);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1700</x>
+      <y>610</y>
+      <w>410</w>
+      <h>1250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>390.0;1230.0;190.0;1230.0;190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1260</x>
+      <y>530</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2090</x>
+      <y>2290</y>
+      <w>450</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+WorldObjectManager
+-
+void draw(float delta);
+virtual void update(float delta);
+virtual bool destroyObject(DreamEngine::Core::WorldObject * o);
+virtual void destroyObjects();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2290</x>
+      <y>2000</y>
+      <w>30</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1960</x>
+      <y>720</y>
+      <w>150</w>
+      <h>1590</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1570.0;130.0;1570.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3090</x>
+      <y>1550</y>
+      <w>30</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>220</y>
+      <w>250</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Animation : Core::Animation
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>240</y>
+      <w>30</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>240</y>
+      <w>290</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2320</x>
+      <y>2020</y>
+      <w>390</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>/CollisionListener/
+bg=orange
+-
+void BeginContact(b2Contact* contact);
+		void EndContact(b2Contact* contact);
+
+		void runCollisions();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2520</x>
+      <y>2110</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2580</x>
+      <y>880</y>
+      <w>380</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=.
+OBJECTS
+-
+OBJECT
+DRAWABLE
+SHAPE
+ACTOR
+SCENE
+CAMERA
+bg=#eeeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>800</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Drawable : CoreDrawable
+bg=#eeeeee
+-
+Window * window</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>830</y>
+      <w>480</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>460.0;140.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>870</y>
+      <w>400</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;480.0;10.0;480.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>870</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Sprite : Drawable
+bg=#eeeeee
+-
+void setAnimation(std::string name);
+void setAngle(float angle);
+void setPosition(b2Vec2 bodyPosition);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>790</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>400</y>
+      <w>1220</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1200.0;80.0;1200.0;10.0;10.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{f1115274-8770-4b67-a0f9-1cb15e92d298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Objects">
+      <UniqueIdentifier>{fb6d4c52-4ab7-44b8-b744-f251a9b30ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Scene">
+      <UniqueIdentifier>{228a80d4-ea9e-436f-a04f-9034c7b582d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\data">
+      <UniqueIdentifier>{a5e9a5eb-b9af-4d26-b353-72da8693a057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Components">
+      <UniqueIdentifier>{bc3c81aa-2653-4a0a-be11-0b4928915884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Drawable">
+      <UniqueIdentifier>{4f3cf111-63f0-4d84-ae13-079879cde534}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DreamEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreObject.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreScene.h">
+      <Filter>Header Files\Core\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreDataManager.h">
+      <Filter>Header Files\Core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectData.h">
+      <Filter>Header Files\Core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Core\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Header Files\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreDrawable.h">
+      <Filter>Header Files\Core\Drawable</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
