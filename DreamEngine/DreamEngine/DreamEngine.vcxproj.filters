@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Core\Sprite">
       <UniqueIdentifier>{00cad4ff-ec79-43bc-8abd-daf17489486d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Basic">
+      <UniqueIdentifier>{41d74c5e-1ea6-4b65-a522-203e3342b484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Basic\Scene">
+      <UniqueIdentifier>{481f0646-08d6-4a84-ab70-63683e55c157}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -102,11 +108,11 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DreamEngine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Objects.h">
       <Filter>Header Files\Core\Objects</Filter>
     </ClInclude>
@@ -127,9 +133,6 @@
     </ClInclude>
     <ClInclude Include="Pair.h">
       <Filter>Header Files\Core\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>Header Files\Core\Scene</Filter>
     </ClInclude>
     <ClInclude Include="WorldObject.h">
       <Filter>Header Files\Core\Objects</Filter>
@@ -181,6 +184,21 @@
     </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreDreamEngine.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DreamEngine.h">
+      <Filter>Header Files\Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreSceneManager.h">
+      <Filter>Header Files\Core\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Basic\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreBuilder.h">
+      <Filter>Header Files\Core\data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
