@@ -31,6 +31,12 @@
     <Filter Include="Header Files\Core\Drawable">
       <UniqueIdentifier>{4f3cf111-63f0-4d84-ae13-079879cde534}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core\Window">
+      <UniqueIdentifier>{2a054f6e-a9ad-4ae9-823b-036c5559484a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Sprite">
+      <UniqueIdentifier>{00cad4ff-ec79-43bc-8abd-daf17489486d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -55,6 +61,45 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CoreObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreDrawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSCounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,8 +143,50 @@
     <ClInclude Include="CoreDrawable.h">
       <Filter>Header Files\Core\Drawable</Filter>
     </ClInclude>
+    <ClInclude Include="CoreWindow.h">
+      <Filter>Header Files\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Header Files\Core\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>Header Files\Core\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSCounter.h">
+      <Filter>Header Files\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Core\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Core\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyBuilder.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionListener.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Header Files\Core\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Raleway.ttf" />
   </ItemGroup>
 </Project>

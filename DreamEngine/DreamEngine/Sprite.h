@@ -1,0 +1,63 @@
+#pragma once
+#include "CoreDrawable.h"
+#include "Engine.h"
+
+#include "AnimationManager.h"
+
+#include "CoreWindow.h"
+namespace DreamEngine {
+
+	struct TextureDefinition {
+
+	};
+
+	struct SpritesheetDefinition {
+		std::string spritesheet;
+		sf::Vector2i position;
+		sf::Vector2i size;
+
+		TextureDefinition textureDefinition;
+
+		//Animations animations;
+	};
+
+	struct SpriteDefiniton : public Core::DrawableDef {
+		SpritesheetDefinition spritesheetDefinition;
+
+		sf::Vector2f position;
+		sf::Vector2f size;
+
+		AnimationManager * animationManager;
+
+		DreamEngine::Core::Window * window;
+	};
+
+	class Sprite :
+		public DreamEngine::Core::Drawable
+	{
+	public:
+		Sprite(SpriteDefiniton spriteDefiniton);
+
+		SpriteDefiniton spriteDefiniton;
+
+		void setAnimation(std::string name);
+
+		void setAngle(float angle);
+		void setPosition(b2Vec2 bodyPosition);
+		void setFillColor(sf::Color color);
+
+		// Inherited via Drawable
+		virtual void draw() override;
+		virtual void onDestroy() override;
+		virtual void load() override;
+		virtual ObjectData save() override;
+	private:
+		sf::RectangleShape * rect = new sf::RectangleShape;
+		sf::Texture texture;
+		Animation * anim;
+		AnimationManager * animationManager;
+		Core::Window * window;
+		
+	};
+
+};
