@@ -1,5 +1,5 @@
 #pragma once
-#include "CoreDrawable.h"
+#include "Drawable.h"
 #include "Engine.h"
 
 #include "AnimationManager.h"
@@ -21,7 +21,7 @@ namespace DreamEngine {
 		//Animations animations;
 	};
 
-	struct SpriteDefiniton : public Core::DrawableDef {
+	struct SpriteDefiniton : public DrawableDef {
 		SpritesheetDefinition spritesheetDefinition;
 
 		sf::Vector2f position;
@@ -33,7 +33,7 @@ namespace DreamEngine {
 	};
 
 	class Sprite :
-		public DreamEngine::Core::Drawable
+		public DreamEngine::Drawable
 	{
 	public:
 		Sprite(SpriteDefiniton spriteDefiniton);

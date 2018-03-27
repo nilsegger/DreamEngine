@@ -3,19 +3,21 @@
 #include <thread>
 #include "ObjectManager.h"
 #include "CoreScene.h"
-#include "Bar.h"
 #include "CoreWindow.h"
 #include "Timer.h"
-#include "DataManager.h"
-
+#include "CoreDataManager.h"
 #include "Text.h"
+#include "CoreBuilder.h"
+
+#define MAX_ACTIVE_SCENES 100
+
 namespace DreamEngine {
 
 
 	class SceneManager : public Core::SceneManager {
 
 	public:
-		SceneManager();
+		//SceneManager();
 
 
 
@@ -45,14 +47,12 @@ namespace DreamEngine {
 		virtual void destroy() override;
 	private:
 
-
-		Scene * activeScenes[MAX_ACTIVE_SCENES];
+		Core::Scene * activeScenes[MAX_ACTIVE_SCENES];
 		int activeSceneCount = 0;
 
-		Window * window;
-		CustomDataManager * customDataManager;
-		Builder * builder;
-		Bar * progressBar;
+		Core::Window * window;
+		Core::DataManager * dataManager;
+		Core::Builder * builder;
 
 		Timer loopTimer;
 

@@ -12,8 +12,10 @@ namespace DreamEngine::Core {
 	};
 
 	class Scene : public Object {
-
+	public:
 		Scene(SceneDef def);
+
+		bool isReady = false;
 
 		virtual void update(float delta) = 0;
 		virtual void draw(float delta) = 0;

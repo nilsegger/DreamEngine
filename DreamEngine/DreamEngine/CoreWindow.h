@@ -2,7 +2,7 @@
 
 #include <SFML\Graphics.hpp>
 #include "CoreDrawable.h"
-
+#include "Timer.h"
 
 namespace DreamEngine::Core {
 
@@ -15,6 +15,8 @@ namespace DreamEngine::Core {
 		virtual void close() = 0;
 		virtual void show(bool flag = true) = 0;
 		virtual sf::RenderWindow * getWindow() = 0;
+
+		Timer frameTimer;
 	};
 
 

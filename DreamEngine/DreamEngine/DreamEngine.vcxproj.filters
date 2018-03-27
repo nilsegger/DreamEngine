@@ -1,204 +1,240 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Core">
+    <Filter Include="DreamEngine">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="DreamEngine\Core">
       <UniqueIdentifier>{f1115274-8770-4b67-a0f9-1cb15e92d298}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Objects">
+    <Filter Include="DreamEngine\Core\Objects">
       <UniqueIdentifier>{fb6d4c52-4ab7-44b8-b744-f251a9b30ef6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Scene">
+    <Filter Include="DreamEngine\Core\Scene">
       <UniqueIdentifier>{228a80d4-ea9e-436f-a04f-9034c7b582d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\data">
+    <Filter Include="DreamEngine\Core\data">
       <UniqueIdentifier>{a5e9a5eb-b9af-4d26-b353-72da8693a057}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Components">
+    <Filter Include="DreamEngine\Core\Components">
       <UniqueIdentifier>{bc3c81aa-2653-4a0a-be11-0b4928915884}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Drawable">
+    <Filter Include="DreamEngine\Core\Drawable">
       <UniqueIdentifier>{4f3cf111-63f0-4d84-ae13-079879cde534}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Window">
+    <Filter Include="DreamEngine\Core\Window">
       <UniqueIdentifier>{2a054f6e-a9ad-4ae9-823b-036c5559484a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Core\Sprite">
+    <Filter Include="DreamEngine\Core\Sprite">
       <UniqueIdentifier>{00cad4ff-ec79-43bc-8abd-daf17489486d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Basic">
+    <Filter Include="DreamEngine\Basic">
       <UniqueIdentifier>{41d74c5e-1ea6-4b65-a522-203e3342b484}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Basic\Scene">
+    <Filter Include="DreamEngine\Basic\Scene">
       <UniqueIdentifier>{481f0646-08d6-4a84-ab70-63683e55c157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Basic\Drawable">
+      <UniqueIdentifier>{1f74b7f3-2f8a-4e5e-9cd0-b724a4b10efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{23f7e06d-afb4-4831-8559-c800b7cedf17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Basic\data">
+      <UniqueIdentifier>{7da74a79-0400-4577-972b-146a25aaf083}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CoreScene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ObjectData.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WorldObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Shape.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObject.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreDrawable.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyBuilder.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionListener.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSCounter.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoreObject.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoreDrawable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BodyBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionListener.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Font.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FPSCounter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ObjectBuilder.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CoreObject.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CoreScene.h">
-      <Filter>Header Files\Core\Scene</Filter>
+      <Filter>DreamEngine\Core\Scene</Filter>
     </ClInclude>
     <ClInclude Include="CoreDataManager.h">
-      <Filter>Header Files\Core\data</Filter>
+      <Filter>DreamEngine\Core\data</Filter>
     </ClInclude>
     <ClInclude Include="ObjectData.h">
-      <Filter>Header Files\Core\data</Filter>
+      <Filter>DreamEngine\Core\data</Filter>
     </ClInclude>
     <ClInclude Include="Pair.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="WorldObject.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Shape.h">
-      <Filter>Header Files\Core\Objects</Filter>
+      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CoreDrawable.h">
-      <Filter>Header Files\Core\Drawable</Filter>
+      <Filter>DreamEngine\Core\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="CoreWindow.h">
-      <Filter>Header Files\Core\Window</Filter>
+      <Filter>DreamEngine\Core\Window</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>Header Files\Core\Sprite</Filter>
+      <Filter>DreamEngine\Core\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="AnimationManager.h">
-      <Filter>Header Files\Core\Sprite</Filter>
+      <Filter>DreamEngine\Core\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="FPSCounter.h">
-      <Filter>Header Files\Core\Window</Filter>
+      <Filter>DreamEngine\Core\Window</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
-      <Filter>Header Files\Core\Drawable</Filter>
+      <Filter>DreamEngine\Core\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>Header Files\Core\Sprite</Filter>
+      <Filter>DreamEngine\Core\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="BodyBuilder.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Header Files\Core\Window</Filter>
+      <Filter>DreamEngine\Core\Window</Filter>
     </ClInclude>
     <ClInclude Include="CollisionListener.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="Font.h">
-      <Filter>Header Files\Core\Drawable</Filter>
+      <Filter>DreamEngine\Core\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
-      <Filter>Header Files\Core\Components</Filter>
+      <Filter>DreamEngine\Core\Components</Filter>
     </ClInclude>
     <ClInclude Include="CoreDreamEngine.h">
-      <Filter>Header Files\Core</Filter>
+      <Filter>DreamEngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="DreamEngine.h">
-      <Filter>Header Files\Basic</Filter>
+      <Filter>DreamEngine\Basic</Filter>
     </ClInclude>
     <ClInclude Include="CoreSceneManager.h">
-      <Filter>Header Files\Core\Scene</Filter>
+      <Filter>DreamEngine\Core\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>Header Files\Basic\Scene</Filter>
+      <Filter>DreamEngine\Basic\Scene</Filter>
     </ClInclude>
     <ClInclude Include="CoreBuilder.h">
-      <Filter>Header Files\Core\data</Filter>
+      <Filter>DreamEngine\Core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>DreamEngine\Basic\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="Builder.h">
+      <Filter>DreamEngine\Basic\data</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>DreamEngine\Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="PairSorter.h">
+      <Filter>DreamEngine\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreObjectBuilder.h">
+      <Filter>DreamEngine\Core\data</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBuilder.h">
+      <Filter>DreamEngine\Basic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

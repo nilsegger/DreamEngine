@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2160</x>
-      <y>890</y>
-      <w>330</w>
-      <h>70</h>
+      <x>1728</x>
+      <y>560</y>
+      <w>264</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>bg=orange
-/Core::Object/
+/Core::Object/ -
 -
 int id;
 ObjectType type;</panel_attributes>
@@ -19,10 +19,10 @@ ObjectType type;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2100</x>
-      <y>1130</y>
-      <w>490</w>
-      <h>210</h>
+      <x>1680</x>
+      <y>752</y>
+      <w>392</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>bg=orange
 /Core::Scene : Core::Object/ -
@@ -41,10 +41,10 @@ virtual void save(DataManager * dataManager) = 0;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>950</y>
-      <w>30</w>
-      <h>200</h>
+      <x>1832</x>
+      <y>608</y>
+      <w>24</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -52,10 +52,10 @@ virtual void save(DataManager * dataManager) = 0;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2860</x>
-      <y>1130</y>
-      <w>540</w>
-      <h>120</h>
+      <x>2288</x>
+      <y>752</y>
+      <w>432</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>bg=orange
 /Core::DataManager/
@@ -69,10 +69,10 @@ virtual void save()=0;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2580</x>
-      <y>1120</y>
-      <w>300</w>
-      <h>30</h>
+      <x>2064</x>
+      <y>744</y>
+      <w>240</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
@@ -80,13 +80,13 @@ virtual void save()=0;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2990</x>
-      <y>590</y>
-      <w>510</w>
-      <h>290</h>
+      <x>2392</x>
+      <y>320</y>
+      <w>408</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>bg=#eeeeee
-/ObjectData/
+/ObjectData-/
 -
 bool hasKey(std::string key, bool optional = true)
 
@@ -108,10 +108,10 @@ std::string toString();</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3150</x>
-      <y>870</y>
-      <w>30</w>
-      <h>280</h>
+      <x>2520</x>
+      <y>544</y>
+      <w>24</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
@@ -119,13 +119,13 @@ std::string toString();</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2090</x>
-      <y>1840</y>
-      <w>450</w>
-      <h>170</h>
+      <x>1672</x>
+      <y>1320</y>
+      <w>360</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>bg=#eeeeee
-/ObjectManager/
+/ObjectManager-/
 -
 MAX_OBJECTS 1000
 -
@@ -141,10 +141,10 @@ int getObjectCount() const;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2080</x>
-      <y>1450</y>
-      <w>510</w>
-      <h>280</h>
+      <x>1664</x>
+      <y>1008</y>
+      <w>408</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>bg=orange
 /Core::SceneManager : ObjectManager/
@@ -167,10 +167,10 @@ virtual void destroy() = 0;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2320</x>
-      <y>1330</y>
-      <w>30</w>
-      <h>140</h>
+      <x>1856</x>
+      <y>912</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -178,10 +178,10 @@ virtual void destroy() = 0;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2310</x>
-      <y>1720</y>
-      <w>30</w>
-      <h>140</h>
+      <x>1848</x>
+      <y>1224</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
@@ -189,10 +189,10 @@ virtual void destroy() = 0;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1260</x>
-      <y>1350</y>
-      <w>470</w>
-      <h>150</h>
+      <x>1008</x>
+      <y>928</y>
+      <w>376</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>bg=orange
 /Core::Window/
@@ -203,19 +203,21 @@ virtual void display() = 0;
 virtual void draw(DreamEngine::Core::Drawable * drawable) = 0;
 virtual void close() = 0;
 virtual void show(bool flag=true) = 0;
-virtual sf::RenderWindow * getWindow() = 0;</panel_attributes>
+virtual sf::RenderWindow * getWindow() = 0;
+
+Timer frameTimer;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1390</x>
-      <y>970</y>
-      <w>470</w>
-      <h>140</h>
+      <x>1112</x>
+      <y>624</y>
+      <w>376</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>bg=orange
-/Core::Drawable : Core::Object/
+/Core::Drawable : Core::Object-/
 -
 virtual void draw() = 0;
 virtual void onDestroy() = 0;
@@ -226,10 +228,10 @@ virtual ObjectData save() = 0;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1680</x>
-      <y>1100</y>
-      <w>30</w>
-      <h>280</h>
+      <x>1344</x>
+      <y>728</y>
+      <w>24</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
@@ -237,10 +239,10 @@ virtual ObjectData save() = 0;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1850</x>
-      <y>880</y>
-      <w>330</w>
-      <h>110</h>
+      <x>1480</x>
+      <y>552</y>
+      <w>264</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
@@ -248,13 +250,13 @@ virtual ObjectData save() = 0;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1940</x>
-      <y>460</y>
-      <w>570</w>
-      <h>270</h>
+      <x>1552</x>
+      <y>216</y>
+      <w>456</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>bg=orange
-/Core::WorldObject : Core::Object/
+/Core::WorldObject : Core::Object-/
 -
 bool destroyObject = false;
 bool isColliding = false;
@@ -276,10 +278,10 @@ virtual void endShapeCollision(void * other, b2Contact * contact) = 0;</panel_at
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2500</x>
-      <y>680</y>
-      <w>510</w>
-      <h>30</h>
+      <x>2000</x>
+      <y>392</y>
+      <w>408</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>490.0;10.0;10.0;10.0</additional_attributes>
@@ -287,10 +289,10 @@ virtual void endShapeCollision(void * other, b2Contact * contact) = 0;</panel_at
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>720</y>
-      <w>30</w>
-      <h>190</h>
+      <x>1840</x>
+      <y>424</y>
+      <w>24</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
@@ -298,63 +300,47 @@ virtual void endShapeCollision(void * other, b2Contact * contact) = 0;</panel_at
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2340</x>
-      <y>280</y>
-      <w>450</w>
-      <h>100</h>
+      <x>1872</x>
+      <y>72</y>
+      <w>360</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>bg=#eeeeee
-/Core::Shape : Core::WorldObject/
+/Core::Shape : Core::WorldObject-/
 -
 Actor * parent;
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>144</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1912</x>
+      <y>144</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
     <coordinates>
       <x>1760</x>
-      <y>280</y>
-      <w>450</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>bg=#eeeeee
-/ Core::Actor : Core::WorldObject/
--
-virtual void update(float delta) = 0;
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2070</x>
-      <y>370</y>
-      <w>30</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2390</x>
-      <y>370</y>
-      <w>30</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2200</x>
-      <y>270</y>
-      <w>160</w>
-      <h>30</h>
+      <y>64</y>
+      <w>128</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
@@ -362,10 +348,10 @@ virtual void update(float delta) = 0;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2850</x>
-      <y>1490</y>
-      <w>510</w>
-      <h>70</h>
+      <x>2280</x>
+      <y>1040</y>
+      <w>408</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>bg=orange
 /Core::Builder/
@@ -376,10 +362,10 @@ virtual void build(std::vector&lt;ObjectData&gt; data, float * progress) = 0;</p
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2720</x>
-      <y>2160</y>
-      <w>510</w>
-      <h>70</h>
+      <x>2176</x>
+      <y>1576</y>
+      <w>408</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>/Builder/
 -
@@ -391,21 +377,21 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3220</x>
-      <y>2180</y>
-      <w>180</w>
-      <h>30</h>
+      <x>2576</x>
+      <y>1592</y>
+      <w>488</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>590.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3380</x>
-      <y>2120</y>
-      <w>540</w>
-      <h>160</h>
+      <x>3048</x>
+      <y>1544</y>
+      <w>432</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>/ObjectBuilder/
 -
@@ -423,32 +409,32 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2580</x>
-      <y>1700</y>
-      <w>900</w>
-      <h>440</h>
+      <x>2064</x>
+      <y>1208</y>
+      <w>1064</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;880.0;10.0;880.0;420.0</additional_attributes>
+    <additional_attributes>10.0;10.0;880.0;10.0;1310.0;420.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1720</x>
-      <y>1490</y>
-      <w>1680</w>
-      <h>670</h>
+      <x>1376</x>
+      <y>1040</y>
+      <w>1688</w>
+      <h>536</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;650.0;1660.0;650.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;650.0;2090.0;650.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1160</x>
-      <y>2270</y>
-      <w>300</w>
-      <h>110</h>
+      <x>928</x>
+      <y>1664</y>
+      <w>240</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>/CameraManager/
 -
@@ -461,10 +447,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1130</x>
-      <y>1880</y>
-      <w>440</w>
-      <h>260</h>
+      <x>904</x>
+      <y>1352</y>
+      <w>352</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>/Window/
 -
@@ -486,21 +472,21 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1430</x>
-      <y>1490</y>
-      <w>30</w>
-      <h>410</h>
+      <x>1144</x>
+      <y>1072</y>
+      <w>24</w>
+      <h>296</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;390.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1340</x>
-      <y>2130</y>
-      <w>30</w>
-      <h>160</h>
+      <x>1072</x>
+      <y>1552</y>
+      <w>24</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
@@ -508,12 +494,12 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>2320</y>
-      <w>580</w>
-      <h>240</h>
+      <x>376</x>
+      <y>1704</y>
+      <w>464</w>
+      <h>192</h>
     </coordinates>
-    <panel_attributes>/Camera/
+    <panel_attributes>/Camera-/
 -
 virtual void move(sf::Vector2f offset);
 virtual void setCameraScreenPosition(sf::Vector2f position);
@@ -533,10 +519,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1040</x>
-      <y>2310</y>
-      <w>140</w>
-      <h>30</h>
+      <x>832</x>
+      <y>1696</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
@@ -544,10 +530,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>1000</y>
-      <w>470</w>
-      <h>1340</h>
+      <x>752</x>
+      <y>648</y>
+      <w>376</w>
+      <h>1072</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>450.0;10.0;10.0;10.0;10.0;1320.0</additional_attributes>
@@ -555,12 +541,12 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1590</x>
-      <y>2260</y>
-      <w>200</w>
-      <h>110</h>
+      <x>1200</x>
+      <y>1208</y>
+      <w>160</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>Timer
+    <panel_attributes>Timer-
 -
 		virtual void start();
 		virtual void restart();
@@ -573,23 +559,23 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1560</x>
-      <y>2130</y>
-      <w>50</w>
-      <h>150</h>
+      <x>1192</x>
+      <y>1072</y>
+      <w>96</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30.0;130.0;30.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;10.0;70.0;100.0;70.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1480</x>
-      <y>2390</y>
-      <w>140</w>
-      <h>60</h>
+      <x>1184</x>
+      <y>1760</y>
+      <w>112</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>FPSCounter
+    <panel_attributes>FPSCounter-
 -
 int getFrames();
 
@@ -599,10 +585,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1520</x>
-      <y>2130</y>
-      <w>30</w>
-      <h>280</h>
+      <x>1216</x>
+      <y>1552</y>
+      <w>24</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;260.0;10.0;10.0</additional_attributes>
@@ -610,13 +596,13 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>490</y>
-      <w>390</w>
-      <h>100</h>
+      <x>704</x>
+      <y>240</y>
+      <w>312</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>bg=orange
-/Animation/
+/Animation-/
 -
 std::string getName() const;
 virtual sf::IntRect update();</panel_attributes>
@@ -625,10 +611,10 @@ virtual sf::IntRect update();</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>190</y>
-      <w>280</w>
-      <h>120</h>
+      <x>304</x>
+      <y>0</y>
+      <w>224</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>/struct Frame/
 -
@@ -642,13 +628,13 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1390</x>
-      <y>480</y>
-      <w>340</w>
-      <h>140</h>
+      <x>1112</x>
+      <y>232</y>
+      <w>272</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>bg=#eeeeee
-AnimationManager : Core::ObjectManager
+AnimationManager : Core::ObjectManager-
 -
 Animation * getAnimation(std::string name);
 		Animation * get(int index);</panel_attributes>
@@ -657,10 +643,10 @@ Animation * getAnimation(std::string name);
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1700</x>
-      <y>610</y>
-      <w>410</w>
-      <h>1250</h>
+      <x>1360</x>
+      <y>336</y>
+      <w>328</w>
+      <h>1000</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>390.0;1230.0;190.0;1230.0;190.0;10.0;10.0;10.0</additional_attributes>
@@ -668,10 +654,10 @@ Animation * getAnimation(std::string name);
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1260</x>
-      <y>530</y>
-      <w>150</w>
-      <h>30</h>
+      <x>1008</x>
+      <y>272</y>
+      <w>120</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
@@ -679,10 +665,10 @@ Animation * getAnimation(std::string name);
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2090</x>
-      <y>2290</y>
-      <w>450</w>
-      <h>100</h>
+      <x>1672</x>
+      <y>1680</y>
+      <w>360</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>bg=#eeeeee
 WorldObjectManager
@@ -696,10 +682,10 @@ virtual void destroyObjects();</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>2000</y>
-      <w>30</w>
-      <h>310</h>
+      <x>1832</x>
+      <y>1448</y>
+      <w>24</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
@@ -707,10 +693,10 @@ virtual void destroyObjects();</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1960</x>
-      <y>720</y>
-      <w>150</w>
-      <h>1590</h>
+      <x>1568</x>
+      <y>424</y>
+      <w>120</w>
+      <h>1272</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1570.0;130.0;1570.0</additional_attributes>
@@ -718,10 +704,10 @@ virtual void destroyObjects();</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3090</x>
-      <y>1550</y>
-      <w>30</w>
-      <h>630</h>
+      <x>2472</x>
+      <y>1088</y>
+      <w>24</w>
+      <h>504</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
@@ -729,10 +715,10 @@ virtual void destroyObjects();</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>220</y>
-      <w>250</w>
-      <h>30</h>
+      <x>736</x>
+      <y>24</y>
+      <w>200</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Animation : Core::Animation
 bg=#eeeeee</panel_attributes>
@@ -741,10 +727,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>240</y>
-      <w>30</w>
-      <h>270</h>
+      <x>840</x>
+      <y>40</y>
+      <w>24</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
@@ -752,10 +738,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>240</y>
-      <w>290</w>
-      <h>30</h>
+      <x>520</x>
+      <y>40</y>
+      <w>232</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
@@ -763,10 +749,10 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2320</x>
-      <y>2020</y>
-      <w>390</w>
-      <h>100</h>
+      <x>1856</x>
+      <y>1576</y>
+      <w>312</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>/CollisionListener/
 bg=orange
@@ -780,21 +766,21 @@ void BeginContact(b2Contact* contact);
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2520</x>
-      <y>2110</y>
-      <w>30</w>
-      <h>200</h>
+      <x>2016</x>
+      <y>1648</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2580</x>
-      <y>880</y>
-      <w>380</w>
-      <h>180</h>
+      <x>2064</x>
+      <y>552</y>
+      <w>304</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=.
 OBJECTS
@@ -811,12 +797,12 @@ bg=#eeeeee</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>800</y>
-      <w>320</w>
-      <h>80</h>
+      <x>496</x>
+      <y>488</y>
+      <w>256</w>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>Drawable : CoreDrawable
+    <panel_attributes>Drawable : CoreDrawable-
 bg=#eeeeee
 -
 Window * window</panel_attributes>
@@ -825,10 +811,10 @@ Window * window</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>830</y>
-      <w>480</w>
-      <h>160</h>
+      <x>744</x>
+      <y>512</y>
+      <w>384</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>460.0;140.0;460.0;10.0;10.0;10.0</additional_attributes>
@@ -836,10 +822,10 @@ Window * window</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>870</y>
-      <w>400</w>
-      <h>500</h>
+      <x>704</x>
+      <y>544</y>
+      <w>320</w>
+      <h>400</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>380.0;480.0;10.0;480.0;10.0;10.0</additional_attributes>
@@ -848,11 +834,11 @@ Window * window</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>870</y>
-      <w>320</w>
-      <h>90</h>
+      <y>544</y>
+      <w>256</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>Sprite : Drawable
+    <panel_attributes>Sprite : Drawable-
 bg=#eeeeee
 -
 void setAnimation(std::string name);
@@ -864,10 +850,10 @@ void setPosition(b2Vec2 bodyPosition);
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>790</y>
-      <w>330</w>
-      <h>100</h>
+      <x>248</x>
+      <y>480</y>
+      <w>264</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
@@ -875,12 +861,51 @@ void setPosition(b2Vec2 bodyPosition);
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>400</y>
-      <w>1220</w>
-      <h>490</h>
+      <x>152</x>
+      <y>168</y>
+      <w>976</w>
+      <h>392</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1200.0;80.0;1200.0;10.0;10.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1408</x>
+      <y>72</y>
+      <w>360</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>bg=#eeeeee
+/ Core::Actor : Core::WorldObject-/
+-
+virtual void update(float delta) = 0;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>640</x>
+      <y>96</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Split core from 
+basic in code</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2888</x>
+      <y>1456</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Add Core ObjectBuilder</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
