@@ -5,21 +5,26 @@
 #include "CoreScene.h"
 #include "CoreWindow.h"
 #include "Timer.h"
-#include "CoreDataManager.h"
+#include "DataManager.h"
 #include "Text.h"
 #include "CoreBuilder.h"
+
+#include <assert.h>
 
 #define MAX_ACTIVE_SCENES 100
 
 namespace DreamEngine {
 
+	struct SceneManagerDef {
+		Core::Window * window;
+		Core::Builder * builder;
+		DataManager * dataManager;
+	};
 
 	class SceneManager : public Core::SceneManager {
 
 	public:
-		//SceneManager();
-
-
+		SceneManager(SceneManagerDef def);
 
 		// Inherited via SceneManager
 		virtual void start() override;
@@ -51,8 +56,10 @@ namespace DreamEngine {
 		int activeSceneCount = 0;
 
 		Core::Window * window;
-		Core::DataManager * dataManager;
+		
 		Core::Builder * builder;
+
+		DataManager * dataManager;
 
 		Timer loopTimer;
 

@@ -52,6 +52,12 @@
     <Filter Include="DreamEngine\Basic\data">
       <UniqueIdentifier>{7da74a79-0400-4577-972b-146a25aaf083}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DreamEngine\Basic\Window">
+      <UniqueIdentifier>{f0c9cb32-a1f3-4ece-8c4d-53e23f39106f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\saves">
+      <UniqueIdentifier>{c9403a73-fd28-4c66-b30a-5cef18f1d3f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -127,6 +133,15 @@
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ObjectBuilder.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Builder.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -233,8 +248,14 @@
     <ClInclude Include="CoreObjectBuilder.h">
       <Filter>DreamEngine\Core\data</Filter>
     </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>DreamEngine\Basic\data</Filter>
+    </ClInclude>
     <ClInclude Include="ObjectBuilder.h">
-      <Filter>DreamEngine\Basic</Filter>
+      <Filter>DreamEngine\Basic\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>DreamEngine\Basic\Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -242,5 +263,10 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Raleway.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt">
+      <Filter>DreamEngine\saves</Filter>
+    </Text>
   </ItemGroup>
 </Project>

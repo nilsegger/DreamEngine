@@ -1,30 +1,25 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
-#include "ObjectData.h"
-#include "Engine.h"
-#include <Box2D\Box2D.h>
-#include "CameraManager.h"
-#include "SceneManager.h"
+#include "Objects.h"
+#include "CoreObjectBuilder.h"
+#include "CoreBuilder.h"
+#include <assert.h>
 
 namespace DreamEngine {
 
-	struct BuilderComponents {
-		SceneManager * sceneManager;
-		sf::RenderWindow * window;
-		CameraManager * cameraManager;
-	};
+	class Builder : public Core::Builder {
 
-	class CustomBuilder {
 	public:
-		CustomBuilder(BuilderComponents builderComponents);
-		virtual bool doesBuild(ObjectType type);
-		virtual void build(ObjectData data, ObjectType type) = 0;
-		BuilderComponents builderComponents;
+		// Inherited via Builder
+		virtual void build(std::vector<ObjectData> data, float * progress) override;
 
-		void addBuildType(ObjectType type);
+		void addBuilder(Core::ObjectBuilder * builder);
 	private:
-		std::vector<ObjectType> buildTypes;
+		std::vector<Core::ObjectBuilder*> builders;
+
+
+		
+
 	};
 
 };

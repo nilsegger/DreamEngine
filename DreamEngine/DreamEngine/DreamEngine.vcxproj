@@ -116,11 +116,13 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="BodyBuilder.cpp" />
+    <ClCompile Include="Builder.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="CollisionListener.cpp" />
     <ClCompile Include="CoreDrawable.cpp" />
     <ClCompile Include="CoreScene.cpp" />
+    <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Font.cpp" />
@@ -136,6 +138,7 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Window.cpp" />
     <ClCompile Include="WorldObject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +157,7 @@
     <ClInclude Include="CoreDrawable.h" />
     <ClInclude Include="CoreDreamEngine.h" />
     <ClInclude Include="CoreObject.h" />
+    <ClInclude Include="DataManager.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DreamEngine.h" />
     <ClInclude Include="Engine.h" />
@@ -173,6 +177,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Window.h" />
     <ClInclude Include="WorldObject.h" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Raleway.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,18 @@
 #include "SceneManager.h"
 
+DreamEngine::SceneManager::SceneManager(SceneManagerDef def)
+	:window(def.window), builder(def.builder), dataManager(def.dataManager)
+{
+	assert(window != nullptr);
+	assert(builder != nullptr);
+	assert(dataManager != nullptr);
+}
 void DreamEngine::SceneManager::startScene(Core::Scene * scene)
 {
+
+	dataManager->saveTo("test.txt");
+
+
 	if (scene->isReady == false) loadScene(scene);
 	if (activeSceneCount >= MAX_ACTIVE_SCENES - 1) {
 		std::cout << "Max active scenes reached" << std::endl;
@@ -101,7 +112,7 @@ void DreamEngine::SceneManager::save()
 		progressBar->setProgress(progress);*/
 		drawWindow();
 	}
-	dataManager->save("test.txt");
+	dataManager->save();
 	//progressBar->displayBar(false);
 }
 
@@ -112,9 +123,16 @@ void DreamEngine::SceneManager::destroy()
 	}
 }
 
+
 void DreamEngine::SceneManager::start()
 {
 
+	std::vector<ObjectData> data;
+	
+	dataManager->getObjectData(&data, new float);
+
+	std::cout << data.size() << std::endl;
+	builder->build(data, new float);
 
 	/*WindowDefinition startUpWindowDef;
 	startUpWindowDef.size = { 200,200 };
