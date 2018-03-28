@@ -2,8 +2,8 @@
 
 
 
-DreamEngine::Camera::Camera(CameraDefinition cameraDefinition)
-	:windowSize(cameraDefinition.windowSize), count(0), window(cameraDefinition.window)
+DreamEngine::Camera::Camera(CameraDef cameraDefinition)
+	:windowSize(cameraDefinition.windowSize), count(0), window(cameraDefinition.window), Core::Object(cameraDefinition)
 {
 	view.reset(sf::FloatRect(0.f, 0.f, float(cameraDefinition.windowSize.x), float(cameraDefinition.windowSize.y)));
 }

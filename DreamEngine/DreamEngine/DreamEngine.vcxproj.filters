@@ -55,8 +55,11 @@
     <Filter Include="DreamEngine\Basic\Window">
       <UniqueIdentifier>{f0c9cb32-a1f3-4ece-8c4d-53e23f39106f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DreamEngine\saves">
+    <Filter Include="saves">
       <UniqueIdentifier>{c9403a73-fd28-4c66-b30a-5cef18f1d3f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ac129903-0638-4524-a409-e1528344d3bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,9 +70,6 @@
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ObjectData.cpp">
-      <Filter>DreamEngine\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldObject.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
@@ -144,6 +144,30 @@
     <ClCompile Include="Builder.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PolygonDrawableBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultScene.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObjectManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonDrawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonShape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonShapeBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -166,9 +190,6 @@
     </ClInclude>
     <ClInclude Include="Pair.h">
       <Filter>DreamEngine\Core\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldObject.h">
-      <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>DreamEngine\Core\Objects</Filter>
@@ -257,6 +278,30 @@
     <ClInclude Include="Window.h">
       <Filter>DreamEngine\Basic\Window</Filter>
     </ClInclude>
+    <ClInclude Include="PolygonDrawableBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultScene.h">
+      <Filter>DreamEngine\Basic\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObjectManager.h">
+      <Filter>DreamEngine\Core\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableManager.h">
+      <Filter>DreamEngine\Core\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonDrawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonShapeBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>DreamEngine\Core\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -266,7 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt">
-      <Filter>DreamEngine\saves</Filter>
+      <Filter>saves</Filter>
     </Text>
   </ItemGroup>
 </Project>

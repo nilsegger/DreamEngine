@@ -13,7 +13,7 @@ namespace DreamEngine {
 	public:
 		Actor(ActorDef def);
 
-		virtual void update(float delta) = 0;
+		
 
 	};
 

@@ -12,11 +12,7 @@ namespace DreamEngine {
 	class Drawable : public Core::Drawable {
 	public:
 		Drawable(DrawableDef def);
-
-	private:
 		Core::Window * window;
-
-
 	};
 
 };

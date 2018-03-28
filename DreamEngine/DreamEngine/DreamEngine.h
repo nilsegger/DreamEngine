@@ -9,3 +9,11 @@
 #include "ObjectBuilder.h"
 
 #include "Window.h"
+
+#include "DefaultScene.h"
+
+#include "Camera.h"
+#include "CameraManager.h"
+
+#include <SFML\Graphics.hpp>
+#include <Box2D\Box2D.h>

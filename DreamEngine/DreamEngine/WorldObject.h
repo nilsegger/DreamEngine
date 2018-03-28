@@ -17,11 +17,12 @@ namespace DreamEngine::Core {
 		bool destroyObject = false;
 		bool isColliding = false;
 		
-		virtual void instantiate(ObjectData data) = 0;
+		virtual void instantiate(DreamEngine::ObjectData data) = 0;
 		virtual void destroy();
 		virtual void onDestroy() = 0;
 		virtual void draw(float delta) = 0;
-		virtual ObjectData save() = 0;
+		virtual void update(float delta) = 0;
+		virtual DreamEngine::ObjectData save() = 0;
 
 		void beginCollision();
 		void endCollision();

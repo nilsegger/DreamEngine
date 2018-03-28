@@ -12,16 +12,16 @@
 namespace DreamEngine {
 
 
-	struct CameraDefinition {
+	struct CameraDef : public Core::ObjectDef {
 		sf::RenderWindow * window = nullptr;
 		sf::Vector2i windowSize = {1280, 720};
 	};
 
 
-	class Camera
+	class Camera : public Core::Object
 	{
 	public:
-		Camera(CameraDefinition cameraDefinition);
+		Camera(CameraDef cameraDefinition);
 		~Camera();
 
 		void move(sf::Vector2f offset);
@@ -34,7 +34,6 @@ namespace DreamEngine {
 		sf::View getView() const;
 		sf::Vector2f getScreenPosition() const;
 		void draw(DreamEngine::Core::Drawable * drawable);
-		void draw(sf::Drawable * drawable);
 		void display();
 	private:
 		sf::RenderWindow * window;

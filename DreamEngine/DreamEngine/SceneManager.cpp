@@ -6,13 +6,11 @@ DreamEngine::SceneManager::SceneManager(SceneManagerDef def)
 	assert(window != nullptr);
 	assert(builder != nullptr);
 	assert(dataManager != nullptr);
+
+	dataManager->saveTo("test.txt");
 }
 void DreamEngine::SceneManager::startScene(Core::Scene * scene)
 {
-
-	dataManager->saveTo("test.txt");
-
-
 	if (scene->isReady == false) loadScene(scene);
 	if (activeSceneCount >= MAX_ACTIVE_SCENES - 1) {
 		std::cout << "Max active scenes reached" << std::endl;

@@ -3,7 +3,7 @@
 void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 {
 
-	assert(builders.size() > 0);
+	if(int(data.size()) > 0) assert(builders.size() > 0);
 
 	int size = int(data.size());
 	for (int i = 0; i < size; i++) {
