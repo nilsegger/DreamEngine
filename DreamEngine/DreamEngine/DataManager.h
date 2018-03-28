@@ -27,6 +27,8 @@ namespace DreamEngine {
 
 
 		virtual void saveTo(std::string path);
+
+		void setDebugPrint(bool flag);
 	private:
 		std::vector<ObjectData> * data;
 		void read(std::vector<ObjectData> * data, float * progress);
@@ -37,6 +39,8 @@ namespace DreamEngine {
 
 		std::string savePath;
 		std::string loadPath;
+
+		bool debugPrint = false;
 	};
 
 };

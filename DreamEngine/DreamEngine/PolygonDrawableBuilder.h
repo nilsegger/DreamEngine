@@ -14,6 +14,6 @@ public:
 	PolygonDrawableBuilder(PolygonDrawableBuilderDef polygonDrawableBuilderDef);
 
 	// Inherited via ObjectBuilder
-	virtual void build(DreamEngine::ObjectData data, OBJECTS type) override;
+	virtual void build(DreamEngine::ObjectData data, std::string type) override;
 
 };

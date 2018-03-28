@@ -3,17 +3,17 @@
 PolygonShapeBuilder::PolygonShapeBuilder(PolygonShapeBuilderDef def)
 	:DreamEngine::ObjectBuilder(def)
 {
-	addBuildType(OBJECTS::POLYGONSHAPE);
+	addBuildType("polygonshape");
 }
 
-void PolygonShapeBuilder::build(DreamEngine::ObjectData data, OBJECTS type)
+void PolygonShapeBuilder::build(DreamEngine::ObjectData data, std::string type)
 {
 	DreamEngine::DefaultScene * scene = (DreamEngine::DefaultScene*)sceneManager->get(data.getInt("scene", false));
 	PolygonShapeDef bodyShapeDef;
 	/*bodyShapeDef.objectData = data;
 	bodyShapeDef.scene = scene;
 	bodyShapeDef.sceneManager = builderComponents.sceneManager;*/
-	bodyShapeDef.type = OBJECTS::POLYGONSHAPE;
+	bodyShapeDef.type = "polygonshape";
 	bodyShapeDef.cameraManager = cameraManager;
 	if (data.hasKey("id")) bodyShapeDef.id = data.getInt("id");
 	b2Vec2 bodyPosition = { data.getFloat("bodyPositionX"), data.getFloat("bodyPositionY") };
@@ -36,6 +36,8 @@ void PolygonShapeBuilder::build(DreamEngine::ObjectData data, OBJECTS type)
 
 	b2Fixture * fixture = DreamEngine::WorldComponentsBuilder::instantiateFixture(DreamEngine::WorldComponentsBuilder::createFixtureDef(&DreamEngine::WorldComponentsBuilder::createPolygonShape(vertices, verticesCount), density, friction, restitution), bodyShapeDef.body);
 	bodyShapeDef.polygonDrawable = (PolygonDrawable*)scene->drawables->get(data.getInt("drawable"));
-	if (data.hasKey("id")) scene->shapes->add(new PolygonShape(bodyShapeDef), true);
-	else scene->shapes->add(new PolygonShape(bodyShapeDef), false);
+	PolygonShape * shape = new PolygonShape(bodyShapeDef);
+	shape->instantiate(data);
+	if (data.hasKey("id")) scene->shapes->add(shape, true);
+	else scene->shapes->add(shape, false);
 }

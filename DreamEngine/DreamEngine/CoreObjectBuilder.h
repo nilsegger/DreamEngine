@@ -7,8 +7,8 @@ namespace DreamEngine::Core {
 
 	class ObjectBuilder {
 	public:
-		virtual bool doesBuild(OBJECTS type) = 0;
-		virtual void build(DreamEngine::ObjectData data, OBJECTS type) = 0;
+		virtual bool doesBuild(std::string type) = 0;
+		virtual void build(DreamEngine::ObjectData data, std::string type) = 0;
 	};
 
 };

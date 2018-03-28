@@ -5,6 +5,8 @@
 
 int main() {
 
+	//assert(sf::Shader::isAvailable());
+
 	DreamEngine::WindowDef windowDef;
 	windowDef.size = {1280, 720};
 	windowDef.style = sf::Style::Close;

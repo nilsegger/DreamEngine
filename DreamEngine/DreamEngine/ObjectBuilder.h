@@ -18,16 +18,16 @@ namespace DreamEngine {
 	public:
 		ObjectBuilder(ObjectBuilderDef def);
 		// Inherited via ObjectBuilder
-		virtual bool doesBuild(OBJECTS type) override;
+		virtual bool doesBuild(std::string type) override;
 
-		void addBuildType(OBJECTS type);
+		void addBuildType(std::string type);
 
 		Core::Window * window;
 		Core::SceneManager * sceneManager;
 		CameraManager * cameraManager;
 
 	private:
-		std::vector<OBJECTS> buildTypes;
+		std::vector<std::string> buildTypes;
 	};
 
 };

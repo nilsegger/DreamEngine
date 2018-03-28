@@ -15,6 +15,6 @@ public:
 
 
 	// Inherited via ObjectBuilder
-	virtual void build(DreamEngine::ObjectData data, OBJECTS type) override;
+	virtual void build(DreamEngine::ObjectData data, std::string type) override;
 
 };

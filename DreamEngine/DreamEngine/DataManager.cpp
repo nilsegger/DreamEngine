@@ -32,8 +32,10 @@ void DreamEngine::DataManager::read(std::vector<ObjectData> * data, float * prog
 		*progress = 100.f / max * int(file.tellg());
 	}
 
-	for (int i = 0; i < int(data->size()); i++) {
-	(*data)[i].print();
+	if (debugPrint) {
+		for (int i = 0; i < int(data->size()); i++) {
+			(*data)[i].print();
+		}
 	}
 	file.close();
 	*progress = 100.f;
@@ -69,4 +71,9 @@ void DreamEngine::DataManager::save(ObjectData objectData)
 void DreamEngine::DataManager::saveTo(std::string path)
 {
 	savePath = path;
+}
+
+void DreamEngine::DataManager::setDebugPrint(bool flag)
+{
+	debugPrint = flag;
 }

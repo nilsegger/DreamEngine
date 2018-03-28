@@ -3,15 +3,15 @@
 PolygonDrawableBuilder::PolygonDrawableBuilder(PolygonDrawableBuilderDef polygonDrawableBuilderDef)
 	:DreamEngine::ObjectBuilder(polygonDrawableBuilderDef)
 {
-	addBuildType(OBJECTS::POLYGONDRAWABLE);
+	addBuildType("polygondrawable");
 }
 
-void PolygonDrawableBuilder::build(DreamEngine::ObjectData data, OBJECTS type)
+void PolygonDrawableBuilder::build(DreamEngine::ObjectData data, std::string type)
 {
 	DreamEngine::DefaultScene * scene = (DreamEngine::DefaultScene*)sceneManager->get(data.getInt("scene", false));
 	PolygonDrawableDef polygonDrawableDef;
 	//polygonDrawableDef.objectData = data;
-	polygonDrawableDef.type = OBJECTS::POLYGONDRAWABLE;
+	polygonDrawableDef.type = "polygondrawable";
 	polygonDrawableDef.id = data.getInt("id", false);
 	polygonDrawableDef.bodyPosition = { data.getFloat("bodyPositionX"), data.getFloat("bodyPositionY") };
 	polygonDrawableDef.points = data.getInt("vertices");

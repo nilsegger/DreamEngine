@@ -7,17 +7,15 @@ void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 
 	int size = int(data.size());
 	for (int i = 0; i < size; i++) {
-		OBJECTS type = OBJECTS(data[i].getInt("type"));
-		std::cout << "Type is " << type << std::endl;
-		if (type == -1) continue; //meta data
+		std::string type = data[i].getString("type");
+		if (type == "metadata") continue; //meta data
 		for (int q = 0; q < int(builders.size()); q++) {
 			if (builders[q]->doesBuild(type)) {
 				builders[q]->build(data[i], type);
-				std::cout << "Builder found" << std::endl;
 				break;
 			}
 			else if (q == int(builders.size()) - 1) {
-				std::cout << "No builder found for object of type " << type << std::endl;
+				std::cout << "No builder found for object of type '" << type << "'" << std::endl;
 			}
 		}
 

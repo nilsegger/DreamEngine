@@ -1,6 +1,8 @@
 #pragma once
 
-enum OBJECTS {
+#include <vector>
+
+/*enum OBJECTS {
 	OBJECT,
 	DRAWABLE,
 	SHAPE,
@@ -10,4 +12,4 @@ enum OBJECTS {
 	POLYGONDRAWABLE,
 	POLYGONSHAPE,
 	POLYGONACTOR
-};
+};*/

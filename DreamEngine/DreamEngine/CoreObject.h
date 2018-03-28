@@ -1,12 +1,13 @@
 #pragma once
 
 #include "Objects.h"
+#include <string>
 
 namespace DreamEngine::Core {
 
 	struct ObjectDef {
 		int id = -1;
-		OBJECTS type = OBJECT;
+		std::string type = "Default Object";
 	};
 
 	class Object
@@ -15,7 +16,7 @@ namespace DreamEngine::Core {
 		Object(ObjectDef def);
 
 		int id;
-		OBJECTS type;
+		std::string type = "Default Object";
 	};
 
 }

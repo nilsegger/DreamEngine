@@ -5,13 +5,13 @@ DreamEngine::ObjectBuilder::ObjectBuilder(ObjectBuilderDef def)
 {
 }
 
-bool DreamEngine::ObjectBuilder::doesBuild(OBJECTS type)
+bool DreamEngine::ObjectBuilder::doesBuild(std::string type)
 {
 	for (int i = 0; i < int(buildTypes.size()); i++) if (buildTypes[i] == type) return true;
 	return false;
 }
 
-void DreamEngine::ObjectBuilder::addBuildType(OBJECTS type)
+void DreamEngine::ObjectBuilder::addBuildType(std::string type)
 {
 	buildTypes.push_back(type);
 }
