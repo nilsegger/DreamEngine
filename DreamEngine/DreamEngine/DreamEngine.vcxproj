@@ -140,8 +140,10 @@
     <ClCompile Include="PolygonShape.cpp" />
     <ClCompile Include="PolygonShapeBuilder.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteBuilder.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -185,9 +187,11 @@
     <ClInclude Include="PolygonShape.h" />
     <ClInclude Include="PolygonShapeBuilder.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="CoreWindow.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteBuilder.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Window.h" />
@@ -196,12 +200,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="shader.frag" />
+    <None Include="shader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Raleway.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="rubicscube.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

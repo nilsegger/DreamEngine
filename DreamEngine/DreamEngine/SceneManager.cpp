@@ -129,7 +129,6 @@ void DreamEngine::SceneManager::start()
 	
 	dataManager->getObjectData(&data, new float);
 
-	std::cout << data.size() << std::endl;
 	builder->build(data, new float);
 
 	/*WindowDefinition startUpWindowDef;

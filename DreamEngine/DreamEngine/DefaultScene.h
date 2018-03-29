@@ -5,6 +5,9 @@
 #include "CollisionListener.h"
 #include "WorldObjectManager.h"
 #include "DrawableManager.h"
+
+#include "Sprite.h"
+
 namespace DreamEngine {
 
 	struct DefaultSceneDef : public Core::SceneDef {

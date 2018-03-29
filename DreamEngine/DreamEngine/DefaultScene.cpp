@@ -23,6 +23,9 @@ void DreamEngine::DefaultScene::draw(float delta)
 {
 	actors->draw(delta);
 	shapes->draw(delta);
+
+	Sprite * sprite = (Sprite*)drawables->get(63);
+	sprite->draw();
 }
 
 void DreamEngine::DefaultScene::destroy()
@@ -39,7 +42,6 @@ void DreamEngine::DefaultScene::load(float * progress)
 {
 	assert(drawables != nullptr);
 	drawables->load(new float);
-
 	isReady = true;
 }
 

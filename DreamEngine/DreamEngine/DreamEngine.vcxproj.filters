@@ -61,6 +61,15 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{ac129903-0638-4524-a409-e1528344d3bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DreamEngine\Basic\Shaders">
+      <UniqueIdentifier>{2e15c8d0-33fd-432b-b4e2-75e8bbd978e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Basic\Sprite">
+      <UniqueIdentifier>{7614d636-80bd-40da-8aad-b1edc6332e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{aa7e1782-43d9-40fc-8fa6-4a8e1b4b87d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -168,6 +177,12 @@
     <ClCompile Include="WorldObject.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteBuilder.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -217,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>DreamEngine\Core\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>DreamEngine\Core\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>DreamEngine\Core\Components</Filter>
@@ -302,9 +314,24 @@
     <ClInclude Include="WorldObject.h">
       <Filter>DreamEngine\Core\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="SpriteBuilder.h">
+      <Filter>DreamEngine\Basic\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>DreamEngine\Core\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>DreamEngine\Core\Sprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="shader.frag">
+      <Filter>DreamEngine\Basic\Shaders</Filter>
+    </None>
+    <None Include="shader.vert">
+      <Filter>DreamEngine\Basic\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Raleway.ttf" />
@@ -313,5 +340,10 @@
     <Text Include="test.txt">
       <Filter>saves</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="rubicscube.png">
+      <Filter>assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 
 int main() {
 
-	//assert(sf::Shader::isAvailable());
+	assert(sf::Shader::isAvailable());
 
 	DreamEngine::WindowDef windowDef;
 	windowDef.size = {1280, 720};
@@ -61,6 +61,14 @@ int main() {
 	PolygonShapeBuilder * polygonShapeBuilder = new PolygonShapeBuilder(polygonShapeBuilderDef);
 	builder->addBuilder(polygonShapeBuilder);
 
+	DreamEngine::SpriteBuilderDef spriteBuilderDef;
+	spriteBuilderDef.cameraManager = cameraManager;
+	spriteBuilderDef.sceneManager = sceneManager;
+	spriteBuilderDef.window = window;
+
+	DreamEngine::SpriteBuilder * spriteBuilder = new DreamEngine::SpriteBuilder(spriteBuilderDef);
+	builder->addBuilder(spriteBuilder);
+
 	DreamEngine::DefaultSceneDef defaultSceneDef;
 	defaultSceneDef.id = 1;
 	defaultSceneDef.gravity = {0.f, 1.f};
@@ -69,14 +77,14 @@ int main() {
 
 	sceneManager->add(defaultScene, true);
 
-	sceneManager->startScene(defaultScene);
-
 	sceneManager->start();
 	
+	sceneManager->startScene(defaultScene);
 
 	sf::RectangleShape rect;
 	rect.setPosition(0, 0);
 	rect.setSize({ 100,100 });
+
 
 	while (window->isOpen()) {
 

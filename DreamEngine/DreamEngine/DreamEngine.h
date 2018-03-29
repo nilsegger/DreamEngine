@@ -8,6 +8,8 @@
 #include "DataManager.h"
 #include "ObjectBuilder.h"
 
+#include "SpriteBuilder.h"
+
 #include "Window.h"
 
 #include "DefaultScene.h"

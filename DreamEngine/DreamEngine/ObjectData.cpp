@@ -40,7 +40,22 @@ bool DreamEngine::ObjectData::getBool(std::string key, bool optional)
 
 float DreamEngine::ObjectData::getFloat(std::string key, bool optional)
 {
-	return getInt(key) / INT_TO_FLOAT;
+	return getInt(key, optional) / INT_TO_FLOAT;
+}
+
+b2Vec2 DreamEngine::ObjectData::getb2Vec2(std::string key, bool optional)
+{
+	return b2Vec2{getFloat( key + "X" ,optional), getFloat( key + "Y", optional)};
+}
+
+sf::Vector2f DreamEngine::ObjectData::getVec2f(std::string key, bool optional)
+{
+	return sf::Vector2f(getFloat(key+"X", optional), getFloat(key + "Y", optional));
+}
+
+sf::Vector2i DreamEngine::ObjectData::getVec2i(std::string key, bool optional)
+{
+	return sf::Vector2i(getInt(key + "X", optional), getInt(key + "Y", optional));
 }
 
 void DreamEngine::ObjectData::add(Pair<std::string, std::string> pair)
@@ -69,6 +84,24 @@ void DreamEngine::ObjectData::setBool(std::string key, bool flag)
 {
 	if (flag) setInt(key, 1);
 	else setInt(key, 0);
+}
+
+void DreamEngine::ObjectData::setb2Vec2(std::string key, b2Vec2 val)
+{
+	setFloat(key + "X", val.x);
+	setFloat(key + "Y", val.y);
+}
+
+void DreamEngine::ObjectData::setVec2f(std::string key, sf::Vector2f val)
+{
+	setFloat(key + "X", val.x);
+	setFloat(key + "Y", val.y);
+}
+
+void DreamEngine::ObjectData::setVec2i(std::string key, sf::Vector2i val)
+{
+	setInt(key + "X", val.x);
+	setInt(key + "Y", val.y);
 }
 
 void DreamEngine::ObjectData::print()

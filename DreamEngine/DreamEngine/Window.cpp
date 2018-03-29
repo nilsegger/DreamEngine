@@ -20,7 +20,7 @@ void DreamEngine::Window::clear()
 {
 	if (window == nullptr) return;
 	events();
-	window->clear(sf::Color::White);
+	window->clear(sf::Color::Black);
 }
 
 void DreamEngine::Window::display()

@@ -3,7 +3,7 @@
 #include "Engine.h"
 
 #include "AnimationManager.h"
-
+#include "Shader.h"
 #include "CoreWindow.h"
 namespace DreamEngine {
 
@@ -51,13 +51,15 @@ namespace DreamEngine {
 		virtual void onDestroy() override;
 		virtual void load() override;
 		virtual ObjectData save() override;
+
+		void addShader(Shader * shader);
 	private:
 		sf::RectangleShape * rect = new sf::RectangleShape;
 		sf::Texture texture;
 		Animation * anim;
 		AnimationManager * animationManager;
 		Core::Window * window;
-		
+		Shader * shader;
 	};
 
 };
