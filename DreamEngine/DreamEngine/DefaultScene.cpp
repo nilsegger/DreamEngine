@@ -24,8 +24,27 @@ void DreamEngine::DefaultScene::draw(float delta)
 	actors->draw(delta);
 	shapes->draw(delta);
 
+	/*
+	
+	type	default-sprite
+	scene	1
+	id	63
+	positionX	100000
+	positionY	100000
+	sizeX	300000
+	sizeY	300000
+	spritesheet-positionX	0
+	spritesheet-positionY	0
+	spritesheet-sizeX	614
+	spritesheet-sizeY	640
+	spritesheet	rubicscube.png
+	shader	shader
+	-	-
+	*/
 	Sprite * sprite = (Sprite*)drawables->get(63);
-	sprite->draw();
+	if(sprite!=nullptr)	sprite->draw();
+	
+	
 }
 
 void DreamEngine::DefaultScene::destroy()

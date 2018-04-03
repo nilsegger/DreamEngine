@@ -9,7 +9,7 @@ namespace DreamEngine {
 	class Engine
 	{
 	public:
-		static constexpr float SCALE = 70.f;
+		static constexpr float SCALE = 100.f;
 		static constexpr int MAX_VERTICES = 10;
 
 		static float worldToPixel(float val);

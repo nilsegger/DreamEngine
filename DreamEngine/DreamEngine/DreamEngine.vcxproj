@@ -126,6 +126,7 @@
     <ClCompile Include="DefaultScene.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DrawableManager.cpp" />
+    <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FPSCounter.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="DrawableManager.h" />
     <ClInclude Include="DreamEngine.h" />
+    <ClInclude Include="Effect.hpp" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FPSCounter.h" />
@@ -207,6 +209,7 @@
     <Font Include="Raleway.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="shadow-test.lvl.txt" />
     <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>

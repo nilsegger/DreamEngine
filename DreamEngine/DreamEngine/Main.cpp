@@ -6,6 +6,7 @@
 int main() {
 
 	assert(sf::Shader::isAvailable());
+	
 
 	DreamEngine::WindowDef windowDef;
 	windowDef.size = {1280, 720};
@@ -33,7 +34,7 @@ int main() {
 
 	DreamEngine::DataManagerDef dataManagerDef;
 	dataManagerDef.savePath = "test.txt";
-	dataManagerDef.loadPath = "test.txt";
+	dataManagerDef.loadPath = "shadow-test.lvl.txt";
 
 	DreamEngine::DataManager * dataManager = new DreamEngine::DataManager(dataManagerDef);
 
@@ -84,13 +85,13 @@ int main() {
 	sf::RectangleShape rect;
 	rect.setPosition(0, 0);
 	rect.setSize({ 100,100 });
-
+	
 
 	while (window->isOpen()) {
-
 		sceneManager->baseUpdate();
-
 	}
+
+	
 
 	std::cout << "Window closed" << std::endl;
 
