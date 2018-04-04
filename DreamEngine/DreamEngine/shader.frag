@@ -4,8 +4,8 @@ void main()
 {
 
 	vec2 light_forward = vec2(0.707107f, 0.707107f);
-	float range = 10.f;
-	float dimmer = .95f;
+	float range = 1.f;
+	float dimmer = .9f;
 
 	float textureWidth = 1148.f;
 	float textureHeight = 811.f;
