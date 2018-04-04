@@ -82,6 +82,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -215,6 +216,7 @@
     <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="caveman.png" />
     <Image Include="char.png" />
     <Image Include="rubicscube.png" />
   </ItemGroup>

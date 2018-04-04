@@ -16,7 +16,8 @@ void DreamEngine::Sprite::draw()
 	if(shader == nullptr) window->getWindow()->draw(*rect);
 	else {
 		shader->getShader()->setUniform("texture", *rect->getTexture());
-		shader->getShader()->setUniform("width", rect->getSize().x);
+		shader->getShader()->setUniform("light_point", sf::Vector2f(sf::Mouse::getPosition(*window->getWindow())));
+		
 		window->getWindow()->draw(*rect, shader->getShader());
 	}
 }

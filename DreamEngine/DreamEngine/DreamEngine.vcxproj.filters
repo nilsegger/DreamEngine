@@ -363,5 +363,8 @@
     <Image Include="char.png">
       <Filter>assets</Filter>
     </Image>
+    <Image Include="caveman.png">
+      <Filter>assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>
