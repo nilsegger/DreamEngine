@@ -186,6 +186,9 @@
     <ClCompile Include="Effect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lightning.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -329,6 +332,9 @@
     <ClInclude Include="Effect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Lightning.h">
+      <Filter>DreamEngine\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -352,6 +358,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="rubicscube.png">
+      <Filter>assets</Filter>
+    </Image>
+    <Image Include="char.png">
       <Filter>assets</Filter>
     </Image>
   </ItemGroup>

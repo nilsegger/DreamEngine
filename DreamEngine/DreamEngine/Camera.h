@@ -39,7 +39,7 @@ namespace DreamEngine {
 		sf::RenderWindow * window;
 
 		sf::Vector2f position;
-		sf::Vector2f range;
+		sf::Vector2f viewport;
 		sf::Vector2i windowSize;
 		sf::View view;
 

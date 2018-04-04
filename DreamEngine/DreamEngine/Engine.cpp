@@ -25,6 +25,11 @@ b2Vec2 DreamEngine::Engine::pixelToWorld(sf::Vector2f val)
 	return b2Vec2(val.x / SCALE, val.y / SCALE);
 }
 
+b2Vec2 DreamEngine::Engine::pixelToWorld(sf::Vector2u val)
+{
+	return b2Vec2(val.x / SCALE, val.y / SCALE);
+}
+
 
 void DreamEngine::Engine::waitForKeyPress(std::string message)
 {

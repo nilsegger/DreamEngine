@@ -34,7 +34,7 @@ void DreamEngine::Sprite::load()
 
 	texture.setRepeated(false);
 	texture.setSmooth(false);
-	
+
 	rect->setPosition(spriteDefiniton.position);
 	rect->setSize(spriteDefiniton.size);
 	

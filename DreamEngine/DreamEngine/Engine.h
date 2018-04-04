@@ -17,6 +17,7 @@ namespace DreamEngine {
 		static sf::Vector2i worldToPixeli(b2Vec2 val);
 		static b2Vec2 pixelToWorld(sf::Vector2i val);
 		static b2Vec2 pixelToWorld(sf::Vector2f val);
+		static b2Vec2 pixelToWorld(sf::Vector2u val);
 		static void waitForKeyPress(std::string message = "");
 		static bool intToBool(int val);
 		static b2Vec2 angleToForward(float angle);

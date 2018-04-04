@@ -130,6 +130,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FPSCounter.cpp" />
+    <ClCompile Include="Lightning.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="CoreObject.cpp" />
     <ClCompile Include="Mouse.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FPSCounter.h" />
+    <ClInclude Include="Lightning.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="ObjectBuilder.h" />
     <ClInclude Include="ObjectData.h" />
@@ -213,6 +215,7 @@
     <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="char.png" />
     <Image Include="rubicscube.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
