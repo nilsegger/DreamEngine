@@ -8,7 +8,7 @@ void main()
 
 	vec2 light_forward = normalize(gl_FragCoord.xy - light_point);
 
-	float range = 15.f;
+	float range = 25.f;
 	float dimmer = .9f;
 
 	float verticalPixelStep = 1.f / textureWidth;

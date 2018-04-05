@@ -73,6 +73,9 @@
     <Filter Include="DreamEngine\Sprite Animator">
       <UniqueIdentifier>{4b6caf9f-e27c-4164-b9f8-1e4fa973ced8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DreamEngine\Game">
+      <UniqueIdentifier>{1985698b-f238-4fb1-a42c-eaef49818de5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -188,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="Effect.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTest.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +337,9 @@
     </ClInclude>
     <ClInclude Include="Effect.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTest.h">
+      <Filter>DreamEngine\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
