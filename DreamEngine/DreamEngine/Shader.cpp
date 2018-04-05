@@ -5,6 +5,12 @@ DreamEngine::Shader::Shader(ShaderDef def)
 {
 }
 
+DreamEngine::Shader::~Shader()
+{
+	if (shader != nullptr) delete shader;
+	shader = nullptr;
+}
+
 void DreamEngine::Shader::load()
 {
 	shader = new sf::Shader;

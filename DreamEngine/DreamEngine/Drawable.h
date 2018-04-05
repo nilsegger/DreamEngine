@@ -6,7 +6,7 @@
 namespace DreamEngine {
 
 	struct DrawableDef : public Core::DrawableDef {
-		Core::Window * window;
+		Core::Window * window = nullptr;
 	};
 
 	class Drawable : public Core::Drawable {

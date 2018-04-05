@@ -9,6 +9,8 @@ DreamEngine::Text::Text(TextDefinition textDefinition)
 
 DreamEngine::Text::~Text()
 {
+	if (text != nullptr) delete text;
+	text = nullptr;
 }
 
 void DreamEngine::Text::setFont(Font font)

@@ -30,10 +30,9 @@ namespace DreamEngine {
 
 		void setDebugPrint(bool flag);
 	private:
-		std::vector<ObjectData> * data;
 		void read(std::vector<ObjectData> * data, float * progress);
 
-		std::vector<ObjectData> * dataToSave;
+		std::vector<ObjectData> * dataToSave = nullptr;
 
 		std::fstream file;
 

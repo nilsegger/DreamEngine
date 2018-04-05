@@ -13,7 +13,7 @@ void DreamEngine::DataManager::read(std::vector<ObjectData> * data, float * prog
 	int max = int(file.tellg());
 	file.seekg(0, std::ios_base::beg);
 	data->push_back(ObjectData());
-	//data = new std::vector<ObjectData>(1);
+	
 	int index = 0;
 	std::string line;
 	while (std::getline(file, line))
@@ -60,6 +60,7 @@ void DreamEngine::DataManager::getObjectData(std::vector<ObjectData> * data, flo
 
 void DreamEngine::DataManager::startSaveChain()
 {
+	if (dataToSave != nullptr) delete dataToSave;
 	dataToSave = new std::vector<ObjectData>();
 }
 

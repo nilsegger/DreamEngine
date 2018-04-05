@@ -3,13 +3,11 @@
 #include "PolygonDrawableBuilder.h"
 #include "PolygonShapeBuilder.h"
 
-#include "Lightning.h"
-
-
+#define de DreamEngine
 
 int main() {
 
-	std::cout << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).x << "#" << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).y << std::endl;
+	//std::cout << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).x << "#" << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).y << std::endl;
 
 	assert(sf::Shader::isAvailable());
 	
@@ -92,22 +90,14 @@ int main() {
 	rect.setPosition(0, 0);
 	rect.setSize({ 100,100 });
 	
-
-	DreamEngine::DirectionalLightningDef lightningDef;
-
-	lightningDef.position = {0,0};
-	lightningDef.forward = { 1.f,1.f };
-	lightningDef.range = 10.f;
-	lightningDef.window = window->getWindow();
-	lightningDef.windowSize = {1280,720};
-	lightningDef.world = defaultScene->world;
-	
-	DreamEngine::DirectionalLightning dirLightning(lightningDef);
-
 	bool isLess = false;
 
 	while (window->isOpen()) {
 		sceneManager->baseUpdate();
+
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) sceneManager->destroy();
+
 
 		if (window->fpsCounter.getFrames() < 60 && isLess == false) {
 			std::cout << "Less than 60 frames per second" << std::endl;
@@ -117,12 +107,6 @@ int main() {
 			std::cout << "More than 60 frames per second" << std::endl;
 			isLess = false;
 		}
-
-	/*	window->getWindow()->clear(sf::Color::Black);
-
-		dirLightning.get();
-		
-		window->getWindow()->display();*/
 	}
 
 	
@@ -134,7 +118,6 @@ int main() {
 	delete builder;
 	delete dataManager;
 	delete sceneManager;
-	delete polygonDrawableBuilder;
 	delete defaultScene;
 
 

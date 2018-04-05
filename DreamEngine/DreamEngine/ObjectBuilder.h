@@ -9,9 +9,9 @@
 namespace DreamEngine {
 
 	struct ObjectBuilderDef {
-		Core::Window * window;
-		Core::SceneManager * sceneManager;
-		CameraManager * cameraManager;
+		Core::Window * window = nullptr;
+		Core::SceneManager * sceneManager = nullptr;
+		CameraManager * cameraManager = nullptr;
 	};
 
 	class ObjectBuilder : public Core::ObjectBuilder {

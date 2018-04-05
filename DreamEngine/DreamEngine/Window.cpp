@@ -8,6 +8,8 @@ DreamEngine::Window::Window(WindowDef def)
 
 DreamEngine::Window::~Window()
 {
+	if(window != nullptr) delete window;
+	window = nullptr;
 }
 
 bool DreamEngine::Window::isOpen() const

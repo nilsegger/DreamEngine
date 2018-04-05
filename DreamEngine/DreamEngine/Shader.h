@@ -16,6 +16,7 @@ namespace DreamEngine {
 
 	public:
 		Shader(ShaderDef def);
+		~Shader();
 
 		void load();
 		sf::Shader * getShader();

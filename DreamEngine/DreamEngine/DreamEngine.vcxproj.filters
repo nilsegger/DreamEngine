@@ -70,6 +70,9 @@
     <Filter Include="assets">
       <UniqueIdentifier>{aa7e1782-43d9-40fc-8fa6-4a8e1b4b87d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DreamEngine\Sprite Animator">
+      <UniqueIdentifier>{4b6caf9f-e27c-4164-b9f8-1e4fa973ced8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectManager.cpp">
@@ -185,9 +188,6 @@
     </ClCompile>
     <ClCompile Include="Effect.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Lightning.cpp">
-      <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,9 +331,6 @@
     </ClInclude>
     <ClInclude Include="Effect.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Lightning.h">
-      <Filter>DreamEngine\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

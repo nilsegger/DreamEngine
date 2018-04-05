@@ -25,7 +25,6 @@ void DreamEngine::DefaultScene::draw(float delta)
 	shapes->draw(delta);
 
 	/*
-	
 	type	default-sprite
 	scene	1
 	id	63
@@ -53,8 +52,12 @@ void DreamEngine::DefaultScene::destroy()
 	shapes->destroyObjects();
 	drawables->destroyObjects();
 
-	delete world;
-	delete collisionListener;
+
+	if(world != nullptr) delete world;
+	if (collisionListener != nullptr)delete collisionListener;
+
+	world = nullptr;
+	collisionListener = nullptr;
 }
 
 void DreamEngine::DefaultScene::load(float * progress)

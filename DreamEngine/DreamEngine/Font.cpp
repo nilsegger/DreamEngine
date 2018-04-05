@@ -8,6 +8,8 @@ DreamEngine::Font::Font(FontDefinition fontDefinition)
 
 DreamEngine::Font::~Font()
 {
+	if(font != nullptr) delete font;
+	font = nullptr;
 }
 
 bool DreamEngine::Font::load()

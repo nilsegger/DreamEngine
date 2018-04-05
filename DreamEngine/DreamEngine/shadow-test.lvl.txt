@@ -68,7 +68,7 @@ restitution	1000
 drawable	1
 scene	1
 -	-
-type	default-sprite
+type	default-sprite-inactive
 scene	1
 id	63
 positionX	0

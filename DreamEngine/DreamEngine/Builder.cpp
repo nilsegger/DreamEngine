@@ -1,5 +1,12 @@
 #include "Builder.h"
 
+DreamEngine::Builder::~Builder()
+{
+	for (int i = int(builders.size()) - 1; i >= 0; i--) {
+		delete builders[i];
+	}
+}
+
 void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 {
 
