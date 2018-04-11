@@ -11,11 +11,6 @@ int main() {
 	GameTest game;
 	game.initGame();
 	
-
-	sf::RectangleShape rect;
-	rect.setPosition(0, 0);
-	rect.setSize({ 100,100 });
-	
 	bool isLess = false;
 
 	while (game.window->isOpen()) {

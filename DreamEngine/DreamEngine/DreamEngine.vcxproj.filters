@@ -42,10 +42,6 @@
     <Filter Include="DreamEngine\Basic\Drawable">
       <UniqueIdentifier>{1f74b7f3-2f8a-4e5e-9cd0-b724a4b10efc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DreamEngine\Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{23f7e06d-afb4-4831-8559-c800b7cedf17}</UniqueIdentifier>
     </Filter>
@@ -75,6 +71,16 @@
     </Filter>
     <Filter Include="DreamEngine\Game">
       <UniqueIdentifier>{1985698b-f238-4fb1-a42c-eaef49818de5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Editor">
+      <UniqueIdentifier>{2e383be0-f8a9-494f-b16c-e8d412f5d5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="DreamEngine\Menu">
+      <UniqueIdentifier>{553e4464-89f8-4715-abd3-8013cf3eb5bb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +199,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameTest.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreButton.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -340,6 +352,15 @@
     </ClInclude>
     <ClInclude Include="GameTest.h">
       <Filter>DreamEngine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>DreamEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreButton.h">
+      <Filter>DreamEngine\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>DreamEngine\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
