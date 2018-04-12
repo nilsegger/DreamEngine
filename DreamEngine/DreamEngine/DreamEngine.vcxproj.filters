@@ -207,6 +207,9 @@
     <ClCompile Include="CoreButton.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ButtonsManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -359,7 +362,7 @@
     <ClInclude Include="CoreButton.h">
       <Filter>DreamEngine\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="ButtonsManager.h">
       <Filter>DreamEngine\Menu</Filter>
     </ClInclude>
   </ItemGroup>

@@ -136,6 +136,7 @@
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="CoreObject.cpp" />
+    <ClCompile Include="ButtonsManager.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="ObjectBuilder.cpp" />
     <ClCompile Include="ObjectData.cpp" />
@@ -183,7 +184,7 @@
     <ClInclude Include="Font.h" />
     <ClInclude Include="FPSCounter.h" />
     <ClInclude Include="GameTest.h" />
-    <ClInclude Include="Menu.h" />
+    <ClInclude Include="ButtonsManager.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="ObjectBuilder.h" />
     <ClInclude Include="ObjectData.h" />

@@ -48,3 +48,13 @@ b2Vec2 DreamEngine::Mouse::getMouseWorldPosition(DreamEngine::Camera * camera)
 {
 	return Engine::pixelToWorld(getMouseScreenPosition(camera));
 }
+
+bool DreamEngine::Mouse::leftIsClicked()
+{
+	return sf::Mouse::isButtonPressed(sf::Mouse::Left);
+}
+
+bool DreamEngine::Mouse::rightIsClicked()
+{
+	return sf::Mouse::isButtonPressed(sf::Mouse::Right);
+}
