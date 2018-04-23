@@ -19,7 +19,7 @@ bool DreamEngine::ObjectManager::add(Core::Object * o, bool fixedId)
 			return false;
 		}
 		if (o->id != -1) {
-			std::cerr << "Object with id " << o->id << " can't be added twice. (Object type: " << o->type << ")" << std::endl;
+			std::cerr << "Object with id " << o->id << " can't be added twice. (New Object type: " << o->type << ") (Object already has an id... Forgot to set fixed id flag to true?)" << std::endl;
 			return false;
 		}
 

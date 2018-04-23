@@ -12,9 +12,27 @@ GameTest::~GameTest()
 	freeMemory();
 }
 
-void GameTest::initGame()
+void GameTest::freeMemory()
 {
+	if (window != nullptr) delete window;
+	if (cameraManager != nullptr) delete cameraManager;
+	if (builder != nullptr) delete builder;
+	if (dataManager != nullptr) delete dataManager;
+	if (sceneManager != nullptr) delete sceneManager;
+	if (spriteBuilder != nullptr) delete spriteBuilder;
+	if (defaultScene != nullptr) delete defaultScene;
 
+	window = nullptr;
+	cameraManager = nullptr;
+	builder = nullptr;
+	dataManager = nullptr;
+	sceneManager = nullptr;
+	spriteBuilder = nullptr;
+	defaultScene = nullptr;
+}
+
+void GameTest::init()
+{
 	DreamEngine::WindowDef windowDef;
 	windowDef.size = { 1280, 720 };
 	windowDef.style = sf::Style::Close;
@@ -87,30 +105,25 @@ void GameTest::initGame()
 	sceneManager->start();
 
 	sceneManager->startScene(defaultScene);
-
 }
 
-void GameTest::deleteGame()
+void GameTest::end()
 {
 	sceneManager->destroy();
 	freeMemory();
 }
 
-void GameTest::freeMemory()
+bool GameTest::update()
 {
-	if (window != nullptr) delete window;
-	if (cameraManager != nullptr) delete cameraManager;
-	if (builder != nullptr) delete builder;
-	if (dataManager != nullptr) delete dataManager;
-	if (sceneManager != nullptr) delete sceneManager;
-	if (spriteBuilder != nullptr) delete spriteBuilder;
-	if (defaultScene != nullptr) delete defaultScene;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		return false;
+	}
 
-	window = nullptr;
-	cameraManager = nullptr;
-	builder = nullptr;
-	dataManager = nullptr;
-	sceneManager = nullptr;
-	spriteBuilder = nullptr;
-	defaultScene = nullptr;
+	sceneManager->baseUpdate();
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		end();
+		init();
+	}
+	return window->isOpen();
 }

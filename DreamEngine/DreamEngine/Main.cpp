@@ -1,42 +1,22 @@
 #include "GameTest.h"
+#include "UI.h"
+
+#include "Launchable.h"
 
 #define de DreamEngine
 
 int main() {
-
-	//std::cout << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).x << "#" << DreamEngine::Engine::angleToForward(DreamEngine::Engine::degToRadian(45.f)).y << std::endl;
-
-	assert(sf::Shader::isAvailable());
+	//assert(sf::Shader::isAvailable());
 	
-	GameTest game;
-	game.initGame();
-	
-	bool isLess = false;
+	de::Launchable * launchable = new de::UILauncher();
 
-	while (game.window->isOpen()) {
-		game.sceneManager->baseUpdate();
+	launchable->init();
 
+	while (launchable->update());
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
-			game.deleteGame(); 
-			game.initGame(); 
-		}
+	launchable->end();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			game.deleteGame();
-			break;
-		}
-
-
-		if (game.window->fpsCounter.getFrames() < 60 && isLess == false) {
-			std::cout << "Less than 60 frames per second" << std::endl;
-			isLess = true;
-		}
-		else if (game.window->fpsCounter.getFrames() >= 60 && isLess == true) {
-			std::cout << "More than 60 frames per second" << std::endl;
-			isLess = false;
-		}
-	}
+	delete launchable;
 	
 	return 0;
 }

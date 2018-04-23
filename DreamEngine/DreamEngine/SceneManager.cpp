@@ -11,6 +11,13 @@ DreamEngine::SceneManager::SceneManager(SceneManagerDef def)
 }
 void DreamEngine::SceneManager::startScene(Core::Scene * scene)
 {
+
+	if (started == false) {
+		std::cout << "SceneManager hasn't been started yet. Please start it before commencing with any scenes" << std::endl;
+		return;
+	}
+
+
 	if (scene->isReady == false) loadScene(scene);
 	if (activeSceneCount >= MAX_ACTIVE_SCENES - 1) {
 		std::cout << "Max active scenes reached" << std::endl;
@@ -36,6 +43,8 @@ void DreamEngine::SceneManager::loadScene(Core::Scene * scene)
 	float progress = 0; //pass pointer of float
 
 	std::thread loadingThread(&Core::Scene::load, scene, &progress);
+
+	std::cout << "SceneManager is waiting for '" << scene->type << "' '" << scene->id << "'" << " to set flag 'isReady' true" << std::endl;
 
 	while (scene->isReady == false) {
 		//progressBar->setProgress(progress);
@@ -182,6 +191,8 @@ void DreamEngine::SceneManager::start()
 
 	window.close();
 	this->window->getWindow()->setVisible(true);*/
+
+	started = true;
 }
 
 void DreamEngine::SceneManager::updateScene()

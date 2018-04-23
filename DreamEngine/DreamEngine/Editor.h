@@ -7,7 +7,8 @@ class Editor
 public:
 	Editor();
 	~Editor();
-	void init();
+	
 private:
+	sf::Vector2f size;
 };
 

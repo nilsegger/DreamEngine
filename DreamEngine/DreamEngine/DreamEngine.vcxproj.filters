@@ -72,15 +72,15 @@
     <Filter Include="DreamEngine\Game">
       <UniqueIdentifier>{1985698b-f238-4fb1-a42c-eaef49818de5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DreamEngine\Editor">
-      <UniqueIdentifier>{2e383be0-f8a9-494f-b16c-e8d412f5d5b9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DreamEngine\Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="DreamEngine\Menu">
       <UniqueIdentifier>{553e4464-89f8-4715-abd3-8013cf3eb5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\ui">
+      <UniqueIdentifier>{acf7cd6a-8a90-41d7-aaf9-ce31c752d7ba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +208,15 @@
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ButtonsManager.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelScene.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -364,6 +373,18 @@
     </ClInclude>
     <ClInclude Include="ButtonsManager.h">
       <Filter>DreamEngine\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel.h">
+      <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Launchable.h">
+      <Filter>DreamEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelScene.h">
+      <Filter>DreamEngine\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

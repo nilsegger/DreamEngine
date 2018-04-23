@@ -66,6 +66,8 @@ namespace DreamEngine {
 		void updateScene();
 		void drawWindow();
 
+		bool started = false;
+
 	};
 
 

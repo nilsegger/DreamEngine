@@ -10,7 +10,7 @@ DreamEngine::Builder::~Builder()
 void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 {
 
-	if(int(data.size()) > 0) assert(builders.size() > 0);
+	if (int(data.size()) > 0) { if (builders.size() == 0) std::cout << "No Builders" << std::endl; }
 
 	int size = int(data.size());
 	for (int i = 0; i < size; i++) {

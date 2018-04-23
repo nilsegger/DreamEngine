@@ -12,6 +12,11 @@ DreamEngine::Mouse::~Mouse()
 {
 }
 
+int DreamEngine::Mouse::getScrollAmount()
+{
+	return scrollAmount;
+}
+
 sf::Vector2f DreamEngine::Mouse::getMouseScreenPosition()
 {
 	
@@ -57,4 +62,18 @@ bool DreamEngine::Mouse::leftIsClicked()
 bool DreamEngine::Mouse::rightIsClicked()
 {
 	return sf::Mouse::isButtonPressed(sf::Mouse::Right);
+}
+
+void DreamEngine::Mouse::updateScroll()
+{
+	assert(window != nullptr);
+	sf::Event event;
+	window->pollEvent(event);
+	if (event.type == sf::Event::MouseWheelScrolled)
+	{
+		scrollAmount = event.mouseWheelScroll.delta;
+	}
+	else {
+		scrollAmount = 0;
+	}
 }

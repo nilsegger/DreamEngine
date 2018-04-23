@@ -141,6 +141,8 @@
     <ClCompile Include="ObjectBuilder.cpp" />
     <ClCompile Include="ObjectData.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="PanelScene.cpp" />
     <ClCompile Include="PolygonDrawable.cpp" />
     <ClCompile Include="PolygonDrawableBuilder.cpp" />
     <ClCompile Include="PolygonShape.cpp" />
@@ -152,6 +154,7 @@
     <ClCompile Include="SpriteBuilder.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WorldObject.cpp" />
     <ClCompile Include="WorldObjectManager.cpp" />
@@ -185,6 +188,7 @@
     <ClInclude Include="FPSCounter.h" />
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="ButtonsManager.h" />
+    <ClInclude Include="Launchable.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="ObjectBuilder.h" />
     <ClInclude Include="ObjectData.h" />
@@ -193,6 +197,8 @@
     <ClInclude Include="Pair.h" />
     <ClInclude Include="CoreSceneManager.h" />
     <ClInclude Include="PairSorter.h" />
+    <ClInclude Include="Panel.h" />
+    <ClInclude Include="PanelScene.h" />
     <ClInclude Include="PolygonDrawable.h" />
     <ClInclude Include="PolygonDrawableBuilder.h" />
     <ClInclude Include="PolygonShape.h" />
@@ -205,6 +211,7 @@
     <ClInclude Include="SpriteBuilder.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WorldObject.h" />
     <ClInclude Include="WorldObjectManager.h" />

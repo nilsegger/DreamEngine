@@ -5,15 +5,13 @@
 #include "PolygonDrawableBuilder.h"
 #include "PolygonShapeBuilder.h"
 
+#include "Launchable.h"
 
-class GameTest
+class GameTest : public DreamEngine::Launchable
 {
 public:
 	GameTest();
 	~GameTest();
-
-	void initGame();
-	void deleteGame();
 
 	DreamEngine::Window * window = nullptr;
 	DreamEngine::CameraManager * cameraManager = nullptr;
@@ -25,7 +23,14 @@ public:
 	PolygonShapeBuilder * polygonShapeBuilder = nullptr;
 	DreamEngine::SpriteBuilder * spriteBuilder = nullptr;
 	DreamEngine::DefaultScene * defaultScene = nullptr;
+
+	// Inherited via Launchable
+	virtual void init() override;
+	virtual void end() override;
+	virtual bool update() override;
 private:
 	void freeMemory();
+
+	
 };
 

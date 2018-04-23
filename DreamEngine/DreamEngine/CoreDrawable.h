@@ -15,6 +15,6 @@ namespace DreamEngine::Core {
 		virtual void draw() = 0;
 		virtual void onDestroy() = 0;
 		virtual void load() = 0;
-		virtual ObjectData save() = 0;
+		virtual DreamEngine::ObjectData save() = 0;
 	};
 };
