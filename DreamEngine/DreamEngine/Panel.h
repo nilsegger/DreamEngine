@@ -12,7 +12,6 @@ namespace DreamEngine {
 	struct PanelDef : DrawableDef {
 		sf::Vector2f position = {0.f,0.f};
 		sf::Vector2f size = { 100.f,100.f };
-		CameraManager * cameraManager = nullptr;
 	};
 
 	class Panel : public Drawable {
@@ -30,6 +29,8 @@ namespace DreamEngine {
 
 		void dragEvent();
 		void closeEvent();
+
+		bool isFocused();
 	private:
 		sf::Vector2f size;
 		sf::Vector2f position;
@@ -48,7 +49,6 @@ namespace DreamEngine {
 
 		bool closed = false;
 		bool closable = true;
-		CameraManager * cameraManager;
 		// blocking other panels, so that only one is dragged per mouse click
 	};
 

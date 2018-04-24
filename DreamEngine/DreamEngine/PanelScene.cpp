@@ -1,7 +1,7 @@
 #include "PanelScene.h"
 
 DreamEngine::PanelScene::PanelScene(PanelSceneDef def)
-	:Core::Scene(def)
+	:Core::Scene(def), cameraManager(def.cameraManager)
 {
 }
 
@@ -17,8 +17,10 @@ void DreamEngine::PanelScene::update(float delta)
 
 void DreamEngine::PanelScene::draw(float delta)
 {
+	assert(cameraManager != nullptr);
 	for (int i = 0; i < int(panels.size()); i++) {
-	 	panels[i]->draw();
+		if (panels[i]->isFocused()) cameraManager->get(Cameras::focusedPanel)->draw(panels[i]);
+		else cameraManager->get(Cameras::unfocusedPanel)->draw(panels[i]);
 	}
 }
 

@@ -19,10 +19,12 @@ void DreamEngine::UILauncher::init()
 	DreamEngine::CameraDef cameraDef;
 	cameraDef.window = window->getWindow();
 	cameraDef.windowSize = { 1280,720 };
-	cameraDef.id = 1; // ui
+	cameraDef.id = 0; // unfocusedPanel
 
-	camera = new DreamEngine::Camera(cameraDef);
-	cameraManager->add(camera, true);
+	cameraManager->add(new DreamEngine::Camera(cameraDef), true);
+
+	cameraDef.id = 1;
+	cameraManager->add(new DreamEngine::Camera(cameraDef), true);
 
 	DreamEngine::Builder * builder = new DreamEngine::Builder;
 
@@ -43,7 +45,7 @@ void DreamEngine::UILauncher::init()
 	DreamEngine::PanelSceneDef panelSceneDef;
 	panelSceneDef.id = 0;
 	panelSceneDef.type = "PanelScene";
-
+	panelSceneDef.cameraManager = cameraManager;
 	panelScene = new DreamEngine::PanelScene(panelSceneDef);
 
 	DreamEngine::PanelDef panelDef;

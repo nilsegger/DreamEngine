@@ -3,11 +3,12 @@
 #include <vector>
 #include "CoreScene.h"
 #include "Panel.h"
+#include "CameraManager.h"
 
 namespace DreamEngine {
 
 	struct PanelSceneDef : public Core::SceneDef {
-
+		CameraManager * cameraManager = nullptr;
 	};
 
 	class PanelScene : public Core::Scene {
@@ -26,6 +27,7 @@ namespace DreamEngine {
 		virtual void save(Core::DataManager * dataManager) override;
 	private:
 		std::vector<Panel*> panels;
+		CameraManager * cameraManager;
 	};
 
 };

@@ -7,7 +7,7 @@
 namespace DreamEngine {
 
 	enum Cameras {
-		WORLD = 0, UI = 1
+		WORLD = 0, UI = 1, unfocusedPanel = 0, focusedPanel = 1
 	};
 
 	class CameraManager :

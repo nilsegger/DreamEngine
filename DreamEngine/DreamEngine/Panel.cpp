@@ -4,7 +4,7 @@ bool DreamEngine::Panel::panelIsBeingDragged = false;
 int DreamEngine::Panel::lastFocused = -1;
 
 DreamEngine::Panel::Panel(PanelDef def)
-	:Drawable(def), size(def.size), position(def.position), mouse(window->getWindow()), cameraManager(def.cameraManager)
+	:Drawable(def), size(def.size), position(def.position), mouse(window->getWindow())
 {
 }
 
@@ -12,13 +12,13 @@ void DreamEngine::Panel::draw()
 {
 	closeEvent();
 	dragEvent();
+
+	if(isFocused()) body->setFillColor(sf::Color::Color(57, 62, 69, 255));
+	else body->setFillColor(sf::Color::Color(57, 62, 69, 127));
+
 	close->setPosition(position + sf::Vector2f{size.x - topbarsize, 0.f});
 	topbar->setPosition(position);
 	body->setPosition(position + sf::Vector2f{ 0,topbarsize }); //offset for bar
-	
-	if (lastFocused == id) {
-		cameraManager->get() //when focused draw on focused camera, cameramanger get cam by string name
-	}
 
 	window->getWindow()->draw(*body);
 	window->getWindow()->draw(*topbar);
@@ -83,6 +83,7 @@ void DreamEngine::Panel::dragEvent()
 
 			beingDragged = true;
 			panelIsBeingDragged = true;
+			lastFocused = id;
 		}
 
 
@@ -106,5 +107,10 @@ void DreamEngine::Panel::closeEvent()
 
 
 	
+}
+
+bool DreamEngine::Panel::isFocused()
+{
+	return id == lastFocused;
 }
 
