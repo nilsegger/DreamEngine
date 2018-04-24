@@ -1,0 +1,8 @@
+spritesheet	character.png
+spritesheet-positionX	0
+spritesheet-positionY	0
+spritesheet-sizeX	64
+spritesheet-sizeY	64
+shader-vert	shader.vert
+shader-frag	shader.frag
+animation	character.anim
