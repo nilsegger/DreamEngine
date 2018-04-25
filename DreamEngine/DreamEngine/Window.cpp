@@ -1,9 +1,9 @@
 #include "Window.h"
 
 DreamEngine::Window::Window(WindowDef def)
-	:size(def.size), title(def.title), style(def.style), contextSettings(def.contextSettings)
+	:fontSize(def.fontSize), title(def.title), style(def.style), contextSettings(def.contextSettings)
 {
-	window = new sf::RenderWindow(sf::VideoMode(size.x, size.y), title, style, contextSettings);
+	window = new sf::RenderWindow(sf::VideoMode(fontSize.x, fontSize.y), title, style, contextSettings);
 }
 
 DreamEngine::Window::~Window()

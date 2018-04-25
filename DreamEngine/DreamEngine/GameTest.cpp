@@ -34,7 +34,7 @@ void GameTest::freeMemory()
 void GameTest::init()
 {
 	DreamEngine::WindowDef windowDef;
-	windowDef.size = { 1280, 720 };
+	windowDef.fontSize = { 1280, 720 };
 	windowDef.style = sf::Style::Close;
 	windowDef.title = "DreamEngine";
 

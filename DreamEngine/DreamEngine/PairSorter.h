@@ -22,7 +22,7 @@ inline void PairSorter<A, B>::add(Pair<A, B> pair)
 template<typename A, typename B>
 inline B PairSorter<A, B>::get(A key)
 {
-	for (int i = 0; i < int(pairs.size()); i++) {
+	for (int i = 0; i < int(pairs.fontSize()); i++) {
 		if (pairs[i].a == key) return pairs[i].b;
 	}
 

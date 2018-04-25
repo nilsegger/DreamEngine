@@ -38,5 +38,5 @@ sf::IntRect DreamEngine::Animation::update()
 		frameTimer.restart();
 	}
 
-	return{ animationDefinition.frame.offset.x + animationDefinition.frame.size.x * animationDefinition.current, animationDefinition.frame.offset.y, animationDefinition.frame.size.x,animationDefinition.frame.size.y};
+	return{ animationDefinition.frame.offset.x + animationDefinition.frame.fontSize.x * animationDefinition.current, animationDefinition.frame.offset.y, animationDefinition.frame.fontSize.x,animationDefinition.frame.fontSize.y};
 }

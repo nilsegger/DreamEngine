@@ -13,7 +13,7 @@
 namespace DreamEngine {
 
 	struct WindowDef {
-		sf::Vector2u size;
+		sf::Vector2u fontSize;
 		std::string title;
 		sf::Uint32 style;
 		sf::ContextSettings contextSettings;
@@ -43,7 +43,7 @@ namespace DreamEngine {
 		void events();
 		CameraManager * cameraManager;
 
-		sf::Vector2u size;
+		sf::Vector2u fontSize;
 		std::string title;
 		sf::Uint32 style;
 		sf::ContextSettings contextSettings;

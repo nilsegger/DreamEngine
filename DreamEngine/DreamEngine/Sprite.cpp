@@ -37,10 +37,10 @@ void DreamEngine::Sprite::load()
 	texture.setSmooth(false);
 
 	rect->setPosition(spriteDefiniton.position);
-	rect->setSize(spriteDefiniton.size);
+	rect->setSize(spriteDefiniton.fontSize);
 	
 	rect->setTexture(&texture);
-	rect->setTextureRect(sf::IntRect(spriteDefiniton.spritesheetDefinition.position.x, spriteDefiniton.spritesheetDefinition.position.y, spriteDefiniton.spritesheetDefinition.size.x, spriteDefiniton.spritesheetDefinition.size.y));
+	rect->setTextureRect(sf::IntRect(spriteDefiniton.spritesheetDefinition.position.x, spriteDefiniton.spritesheetDefinition.position.y, spriteDefiniton.spritesheetDefinition.fontSize.x, spriteDefiniton.spritesheetDefinition.fontSize.y));
 
 	if (shader != nullptr) shader->load();
 }

@@ -22,8 +22,8 @@ void DreamEngine::CollisionListener::EndContact(b2Contact * contact)
 
 void DreamEngine::CollisionListener::runCollisions()
 {
-	int size = int(collisions.size());
-	for (int i = size - 1; i >= 0; i--) {
+	int fontSize = int(collisions.size());
+	for (int i = fontSize - 1; i >= 0; i--) {
 		switch (collisions[i].type)
 		{
 		case CollisionType::BEGINAA:

@@ -71,7 +71,7 @@ void DreamEngine::Mouse::updateScroll()
 	window->pollEvent(event);
 	if (event.type == sf::Event::MouseWheelScrolled)
 	{
-		scrollAmount = event.mouseWheelScroll.delta;
+		scrollAmount = int(event.mouseWheelScroll.delta);
 	}
 	else {
 		scrollAmount = 0;

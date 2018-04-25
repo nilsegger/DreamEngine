@@ -10,8 +10,8 @@ DreamEngine::ObjectData::~ObjectData()
 
 bool DreamEngine::ObjectData::hasKey(std::string key, bool optional)
 {
-	int size = int(data.size());
-	for (int i = 0; i < size; i++) {
+	int fontSize = int(data.size());
+	for (int i = 0; i < fontSize; i++) {
 		if (data[i].a == key) {
 			last = i;
 			return true;

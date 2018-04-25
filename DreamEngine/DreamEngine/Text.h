@@ -7,11 +7,11 @@
 
 namespace DreamEngine {
 
-	struct TextDefinition : public Core::DrawableDef {
+	struct TextDef : public Core::DrawableDef {
 		sf::Vector2f position = { 0, 0 };
 		std::string txt = "Text Drawable";
 		Font * font = nullptr;
-		int size = 30;
+		int fontSize = 30;
 		sf::Color color = sf::Color::Black;
 		Core::Window * window;
 	};
@@ -19,7 +19,7 @@ namespace DreamEngine {
 	class Text : public Core::Drawable
 	{
 	public:
-		Text(TextDefinition textDefinition);
+		Text(TextDef textDefinition);
 		~Text();
 
 		void setFont(Font font);
@@ -27,7 +27,7 @@ namespace DreamEngine {
 		void setPosition(sf::Vector2f position);
 		void setWorldPosition(b2Vec2 position);
 		void setColor(sf::Color color);
-		void setSize(int size);
+		void setSize(int fontSize);
 		// Inherited via Drawable
 		virtual void draw() override;
 
@@ -35,8 +35,10 @@ namespace DreamEngine {
 		virtual void onDestroy() override;
 		virtual void load() override;
 		virtual ObjectData save() override;
+
+		sf::Text * getText();
 	private:
-		TextDefinition textDefinition;
+		TextDef textDefinition;
 		sf::Text * text = new sf::Text;
 		Core::Window * window;
 

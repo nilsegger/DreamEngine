@@ -12,8 +12,8 @@ void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 
 	if (int(data.size()) > 0) { if (builders.size() == 0) std::cout << "No Builders" << std::endl; }
 
-	int size = int(data.size());
-	for (int i = 0; i < size; i++) {
+	int fontSize = int(data.size());
+	for (int i = 0; i < fontSize; i++) {
 		std::string type = data[i].getString("type");
 		if (type == "metadata") continue; //meta data
 		for (int q = 0; q < int(builders.size()); q++) {
@@ -26,7 +26,7 @@ void DreamEngine::Builder::build(std::vector<ObjectData> data, float * progress)
 			}
 		}
 
-		*progress = 100.f / size * (i + 1);
+		*progress = 100.f / fontSize * (i + 1);
 	}
 	*progress = 100.f;
 }

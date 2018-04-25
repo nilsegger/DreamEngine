@@ -15,7 +15,7 @@ namespace DreamEngine {
 	public:
 		PanelScene(PanelSceneDef def);
 
-		void addPanel(Panel * panel);
+		void addPanel(UserInterface::Panel * panel);
 
 		// Inherited via Scene
 		virtual void update(float delta) override;
@@ -26,7 +26,7 @@ namespace DreamEngine {
 		virtual void end() override;
 		virtual void save(Core::DataManager * dataManager) override;
 	private:
-		std::vector<Panel*> panels;
+		std::vector<UserInterface::Panel*> panels;
 		CameraManager * cameraManager;
 	};
 

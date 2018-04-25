@@ -9,7 +9,7 @@ namespace DreamEngine {
 
 	struct Frame {
 		float duration = 1.f;
-		sf::Vector2i size = { 64,64 };
+		sf::Vector2i fontSize = { 64,64 };
 		sf::Vector2i offset;
 	};
 

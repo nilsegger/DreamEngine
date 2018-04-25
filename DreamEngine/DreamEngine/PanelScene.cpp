@@ -5,7 +5,7 @@ DreamEngine::PanelScene::PanelScene(PanelSceneDef def)
 {
 }
 
-void DreamEngine::PanelScene::addPanel(Panel * panel)
+void DreamEngine::PanelScene::addPanel(UserInterface::Panel * panel)
 {
 	panel->load();
 	panels.push_back(panel);

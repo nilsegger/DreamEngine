@@ -47,23 +47,23 @@ b2FixtureDef DreamEngine::WorldComponentsBuilder::createFixtureDef(b2Shape * sha
 	return fixtureDef;
 }
 
-b2PolygonShape DreamEngine::WorldComponentsBuilder::createPolygonShape(b2Vec2 * vertices, int size)
+b2PolygonShape DreamEngine::WorldComponentsBuilder::createPolygonShape(b2Vec2 * vertices, int fontSize)
 {
 	b2PolygonShape shape;
-	shape.Set(vertices, size);
+	shape.Set(vertices, fontSize);
 	return shape;
 }
 
 b2PolygonShape DreamEngine::WorldComponentsBuilder::createPolygonShape(std::vector<b2Vec2> vertices)
 {
-	int size = int(vertices.size());
-	if (size > Engine::MAX_VERTICES) {
+	int fontSize = int(vertices.size());
+	if (fontSize > Engine::MAX_VERTICES) {
 		std::cout << "Shape Builder only allows a max of " << Engine::MAX_VERTICES << " vertices." << __LINE__ - 4 << std::endl;
 		return b2PolygonShape();
 	}
 	b2Vec2 verticesArr[Engine::MAX_VERTICES];
-	for (int i = 0; i < size; i++) verticesArr[i] = vertices[i];
-	return createPolygonShape(verticesArr, size);
+	for (int i = 0; i < fontSize; i++) verticesArr[i] = vertices[i];
+	return createPolygonShape(verticesArr, fontSize);
 }
 
 b2EdgeShape DreamEngine::WorldComponentsBuilder::createEdgeShape(b2Vec2 start, b2Vec2 end)

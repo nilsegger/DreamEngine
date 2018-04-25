@@ -14,12 +14,12 @@ void DreamEngine::SpriteBuilder::build(DreamEngine::ObjectData data, std::string
 	SpriteDefiniton def;
 	def.id = data.getInt("id", false);
 	def.position = data.getVec2f("position");
-	def.size = data.getVec2f("size");
+	def.fontSize = data.getVec2f("size");
 	def.type = "default-sprite";
 	def.window = window;
 	def.animationManager = new AnimationManager;
 	def.spritesheetDefinition.position =data.getVec2i("spritesheet-position");
-	def.spritesheetDefinition.size = data.getVec2i("spritesheet-size");
+	def.spritesheetDefinition.fontSize = data.getVec2i("spritesheet-size");
 	def.spritesheetDefinition.spritesheet = data.getString("spritesheet");
 	Sprite * sprite = new Sprite(def);
 

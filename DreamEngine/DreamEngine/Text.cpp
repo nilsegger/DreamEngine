@@ -1,6 +1,6 @@
 #include "Text.h"
 
-DreamEngine::Text::Text(TextDefinition textDefinition)
+DreamEngine::Text::Text(TextDef textDefinition)
 	:Drawable(textDefinition), textDefinition(textDefinition), window(textDefinition.window)
 {
 	
@@ -38,9 +38,9 @@ void DreamEngine::Text::setColor(sf::Color color)
 	text->setFillColor(color);
 }
 
-void DreamEngine::Text::setSize(int size)
+void DreamEngine::Text::setSize(int fontSize)
 {
-	text->setCharacterSize(size);
+	text->setCharacterSize(fontSize);
 }
 
 void DreamEngine::Text::draw()
@@ -57,13 +57,13 @@ void DreamEngine::Text::load()
 	text->setPosition(textDefinition.position);
 	text->setFillColor(textDefinition.color);
 	text->setString(textDefinition.txt);
-	text->setCharacterSize(textDefinition.size);
+	text->setCharacterSize(textDefinition.fontSize);
 	if (textDefinition.font != nullptr) {
 		textDefinition.font->load();
 		text->setFont(*textDefinition.font->get());
 	}
 	else {
-		FontDefinition fontDef;
+		FontDef fontDef;
 		Font font(fontDef);
 		font.load();
 		text->setFont(*font.get());
@@ -73,4 +73,9 @@ void DreamEngine::Text::load()
 DreamEngine::ObjectData DreamEngine::Text::save()
 {
 	return ObjectData();
+}
+
+sf::Text * DreamEngine::Text::getText()
+{
+	return text;
 }

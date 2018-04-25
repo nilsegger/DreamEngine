@@ -7,6 +7,7 @@
 #include "Panel.h"
 #include "PanelScene.h"
 
+#include "UIButton.h"
 namespace DreamEngine {
 
 	class UILauncher : public Launchable {

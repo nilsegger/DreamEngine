@@ -14,7 +14,7 @@ namespace DreamEngine {
 	struct SpritesheetDefinition {
 		std::string spritesheet;
 		sf::Vector2i position;
-		sf::Vector2i size;
+		sf::Vector2i fontSize;
 
 		TextureDefinition textureDefinition;
 
@@ -25,7 +25,7 @@ namespace DreamEngine {
 		SpritesheetDefinition spritesheetDefinition;
 
 		sf::Vector2f position;
-		sf::Vector2f size;
+		sf::Vector2f fontSize;
 
 		AnimationManager * animationManager;
 

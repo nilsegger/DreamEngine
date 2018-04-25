@@ -1,31 +1,42 @@
 #include "Panel.h"
 
-bool DreamEngine::Panel::panelIsBeingDragged = false;
-int DreamEngine::Panel::lastFocused = -1;
+bool DreamEngine::UserInterface::Panel::panelIsBeingDragged = false;
+int DreamEngine::UserInterface::Panel::lastFocused = -1;
 
-DreamEngine::Panel::Panel(PanelDef def)
-	:Drawable(def), size(def.size), position(def.position), mouse(window->getWindow())
+DreamEngine::UserInterface::Panel::Panel(PanelDef def)
+	:Drawable(def), fontSize(def.fontSize), position(def.position), mouse(window->getWindow())
 {
 }
 
-void DreamEngine::Panel::draw()
+DreamEngine::UserInterface::Panel::~Panel()
+{
+	delete topbar;
+	delete body;
+	delete close;
+}
+
+void DreamEngine::UserInterface::Panel::draw()
 {
 	closeEvent();
 	dragEvent();
 
-	if(isFocused()) body->setFillColor(sf::Color::Color(57, 62, 69, 255));
-	else body->setFillColor(sf::Color::Color(57, 62, 69, 127));
+	if(isFocused()) body->setFillColor(CLR_PANEL_FOCUSED_BG);
+	else body->setFillColor(CLR_PANEL_UNFOCUSED_BG);
 
-	close->setPosition(position + sf::Vector2f{size.x - topbarsize, 0.f});
+	close->setPosition(position + sf::Vector2f{fontSize.x - topbarsize, 0.f});
 	topbar->setPosition(position);
 	body->setPosition(position + sf::Vector2f{ 0,topbarsize }); //offset for bar
 
 	window->getWindow()->draw(*body);
 	window->getWindow()->draw(*topbar);
 	window->getWindow()->draw(*close);
+
+	for (int i = 0; i < int(elements.size()); i++) {
+		elements[i]->draw();
+	}
 }
 
-void DreamEngine::Panel::onDestroy()
+void DreamEngine::UserInterface::Panel::onDestroy()
 {
 	delete body;
 	delete topbar;
@@ -33,33 +44,46 @@ void DreamEngine::Panel::onDestroy()
 	close = nullptr;
 	body = nullptr;
 	topbar = nullptr;
+
+	for (int i = 0; i < int(elements.size()); i++) {
+		elements[i]->onDestroy();
+	}
 }
 
-void DreamEngine::Panel::load()
+void DreamEngine::UserInterface::Panel::load()
 {
 	topbar = new sf::RectangleShape;
-	topbar->setSize(sf::Vector2f{ size.x, topbarsize });
-	topbar->setFillColor(sf::Color::Color(77, 82, 89));
+	topbar->setSize(sf::Vector2f{ fontSize.x, topbarsize });
+	topbar->setFillColor(CLR_PANEL_TOPBAR);
 
 	close = new sf::RectangleShape;
 	close->setSize(sf::Vector2f{ topbarsize, topbarsize });
-	close->setFillColor(sf::Color::Color(191, 48, 74));
+	close->setFillColor(CLR_PANEL_CLOSABLE);
 
 	if (closable == false) {
-		close->setFillColor(sf::Color::Color(191, 48, 74, 75));
+		close->setFillColor(CLR_PANEL_UNCLOSABLE);
 	}
 
 	body = new sf::RectangleShape;
-	body->setSize(size);
-	body->setFillColor(sf::Color::Color(77,82,89,127));
+	body->setSize(fontSize);
+	body->setFillColor(CLR_PANEL_UNFOCUSED_BG);
+
+	for (int i = 0; i < int(elements.size()); i++) {
+		elements[i]->load();
+	}
 }
 
-DreamEngine::ObjectData DreamEngine::Panel::save()
+DreamEngine::ObjectData DreamEngine::UserInterface::Panel::save()
 {
+
+	for (int i = 0; i < int(elements.size()); i++) {
+		elements[i]->save();
+	}
+
 	return ObjectData();
 }
 
-void DreamEngine::Panel::dragEvent()
+void DreamEngine::UserInterface::Panel::dragEvent()
 {
 	if (beingDragged == true) {
 		if (mouse.leftIsClicked() == false || dragable == false) {
@@ -68,6 +92,7 @@ void DreamEngine::Panel::dragEvent()
 			return;
 		}
 		position = mouse.getMouseScreenPosition() - dragOffset;
+		setElementsPositions();
 	}
 	else {
 		if (panelIsBeingDragged) return;
@@ -76,7 +101,7 @@ void DreamEngine::Panel::dragEvent()
 
 		sf::Vector2f mousePos = mouse.getMouseScreenPosition();
 
-		if (mousePos.x >= position.x && mousePos.x <= position.x + size.x - topbarsize &&
+		if (mousePos.x >= position.x && mousePos.x <= position.x + fontSize.x - topbarsize &&
 			mousePos.y >= position.y && mousePos.y <= position.y + topbarsize) {
 
 			dragOffset = mousePos - position;
@@ -90,7 +115,7 @@ void DreamEngine::Panel::dragEvent()
 	}
 }
 
-void DreamEngine::Panel::closeEvent()
+void DreamEngine::UserInterface::Panel::closeEvent()
 {
 
 	if (panelIsBeingDragged || beingDragged || closed || closable == false) return;
@@ -99,7 +124,7 @@ void DreamEngine::Panel::closeEvent()
 
 	sf::Vector2f mousePos = mouse.getMouseScreenPosition();
 
-	if (mousePos.x >= position.x + size.x - topbarsize && mousePos.x <= position.x + size.x &&
+	if (mousePos.x >= position.x + fontSize.x - topbarsize && mousePos.x <= position.x + fontSize.x &&
 		mousePos.y >= position.y && mousePos.y <= position.y + topbarsize) {
 		closed = true;
 		std::cout << "Closing panels is not supported yet..." << std::endl;
@@ -109,8 +134,22 @@ void DreamEngine::Panel::closeEvent()
 	
 }
 
-bool DreamEngine::Panel::isFocused()
+bool DreamEngine::UserInterface::Panel::isFocused()
 {
 	return id == lastFocused;
+}
+
+void DreamEngine::UserInterface::Panel::addUIElement(UIElement * element, sf::Vector2f offset)
+{
+	elements.push_back(element);
+	element->setPosition(position + offset + sf::Vector2f{0, topbarsize});
+	element->offset = offset;
+}
+
+void DreamEngine::UserInterface::Panel::setElementsPositions()
+{
+	for (int i = 0; i < int(elements.size()); i++) {
+		elements[i]->setPosition(position + elements[i]->offset + sf::Vector2f{ 0, topbarsize });
+	}
 }
 

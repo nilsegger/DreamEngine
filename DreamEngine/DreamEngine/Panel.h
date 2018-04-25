@@ -5,19 +5,22 @@
 #include "Drawable.h"
 #include "Mouse.h"
 
+#include "UIColors.h"
+#include "UIElement.h"
+
 #define topbarsize	20
 
-namespace DreamEngine {
+namespace DreamEngine::UserInterface {
 
 	struct PanelDef : DrawableDef {
 		sf::Vector2f position = {0.f,0.f};
-		sf::Vector2f size = { 100.f,100.f };
+		sf::Vector2f fontSize = { 100.f,100.f };
 	};
 
 	class Panel : public Drawable {
 	public:
 		Panel(PanelDef def);
-		
+		~Panel();
 		// Inherited via Drawable
 		virtual void draw() override;
 
@@ -31,13 +34,18 @@ namespace DreamEngine {
 		void closeEvent();
 
 		bool isFocused();
+
+		void addUIElement(UIElement * element, sf::Vector2f offset);
+
 	private:
-		sf::Vector2f size;
+		sf::Vector2f fontSize;
 		sf::Vector2f position;
 
 		sf::RectangleShape * topbar = nullptr;
 		sf::RectangleShape * body = nullptr;
 		sf::RectangleShape * close = nullptr;
+
+
 
 		Mouse mouse;
 		
@@ -52,6 +60,9 @@ namespace DreamEngine {
 
 		bool dragable = true;
 		// blocking other panels, so that only one is dragged per mouse click
+
+		std::vector<UIElement*> elements; //drawable, position offset
+		void setElementsPositions();
 	};
 
 };

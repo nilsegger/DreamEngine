@@ -1,6 +1,6 @@
 #include "Font.h"
 
-DreamEngine::Font::Font(FontDefinition fontDefinition)
+DreamEngine::Font::Font(FontDef fontDefinition)
 	:Object(fontDefinition), path(fontDefinition.path)
 {
 	font = new sf::Font;
@@ -26,3 +26,4 @@ sf::Font * DreamEngine::Font::get()
 {
 	return font;
 }
+

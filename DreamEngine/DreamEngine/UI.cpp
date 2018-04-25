@@ -4,7 +4,7 @@ void DreamEngine::UILauncher::init()
 {
 
 	DreamEngine::WindowDef windowDef;
-	windowDef.size = { 1280, 720 };
+	windowDef.fontSize = { 1280, 720 };
 	windowDef.style = sf::Style::Close;
 	windowDef.title = "DreamEngine";
 
@@ -48,20 +48,27 @@ void DreamEngine::UILauncher::init()
 	panelSceneDef.cameraManager = cameraManager;
 	panelScene = new DreamEngine::PanelScene(panelSceneDef);
 
-	DreamEngine::PanelDef panelDef;
+	DreamEngine::UserInterface::PanelDef panelDef;
 	panelDef.id = 0;
 	panelDef.window = window;
-	panelDef.size = {300.f,200.f};
+	panelDef.fontSize = {300.f,200.f};
 
-	DreamEngine::Panel * panel = new DreamEngine::Panel(panelDef);
+	DreamEngine::UserInterface::Panel * panel = new DreamEngine::UserInterface::Panel(panelDef);
 
-	DreamEngine::PanelDef panelDef2;
+	DreamEngine::UserInterface::PanelDef panelDef2;
 	panelDef2.id = 1;
 	panelDef2.window = window;
-	panelDef2.size = { 300.f,200.f };
+	panelDef2.fontSize = { 300.f,200.f };
 	panelDef2.position = { 300.f,200.f };
 
-	DreamEngine::Panel * panel2 = new DreamEngine::Panel(panelDef2);
+	DreamEngine::UserInterface::Panel * panel2 = new DreamEngine::UserInterface::Panel(panelDef2);
+
+	DreamEngine::UserInterface::ButtonDef buttonDef;
+	buttonDef.text = "Butttonn";
+	buttonDef.window = window;
+	buttonDef.type = "Panel Button1";
+
+	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), sf::Vector2f{30,30});
 
 	panelScene->addPanel(panel);
 	panelScene->addPanel(panel2);
