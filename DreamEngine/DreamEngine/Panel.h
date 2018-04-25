@@ -49,6 +49,8 @@ namespace DreamEngine {
 
 		bool closed = false;
 		bool closable = true;
+
+		bool dragable = true;
 		// blocking other panels, so that only one is dragged per mouse click
 	};
 

@@ -62,7 +62,7 @@ DreamEngine::ObjectData DreamEngine::Panel::save()
 void DreamEngine::Panel::dragEvent()
 {
 	if (beingDragged == true) {
-		if (mouse.leftIsClicked() == false) {
+		if (mouse.leftIsClicked() == false || dragable == false) {
 			beingDragged = false;
 			panelIsBeingDragged = false;
 			return;
