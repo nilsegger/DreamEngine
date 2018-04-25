@@ -386,6 +386,9 @@
     <ClInclude Include="PanelScene.h">
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

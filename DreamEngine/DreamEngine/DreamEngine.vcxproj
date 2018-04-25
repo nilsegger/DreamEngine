@@ -165,6 +165,7 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BodyBuilder.h" />
     <ClInclude Include="Builder.h" />
+    <ClInclude Include="UIButton.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="CollisionListener.h" />
