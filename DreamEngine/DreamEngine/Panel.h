@@ -61,8 +61,10 @@ namespace DreamEngine::UserInterface {
 		bool dragable = true;
 		// blocking other panels, so that only one is dragged per mouse click
 
-		std::vector<UIElement*> elements; //drawable, position offset
+		std::vector<UIElement*> elements;
 		void setElementsPositions();
+
+		void onElementsClickEvent();
 	};
 
 };

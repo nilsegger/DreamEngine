@@ -153,3 +153,34 @@ void DreamEngine::UserInterface::Panel::setElementsPositions()
 	}
 }
 
+void DreamEngine::UserInterface::Panel::onElementsClickEvent()
+{
+	if (isFocused() == false) return;
+
+	for (int i = 0; i < int(elements.size()); i++) {
+		
+		sf::Vector2f mousePos = mouse.getMouseScreenPosition();
+
+		//Box collision
+
+		if (mousePos.x >= elements[i]->getPosition().x && mousePos.x <= elements[i]->getPosition().x + elements[i]->getBounds().x
+			&&mousePos.y >= elements[i]->getPosition().y && mousePos.y <= elements[i]->getPosition().y + elements[i]->getBounds().y) {
+
+			if (elements[i]->hovering == false) {
+				elements[i]->hovering = true;
+				elements[i]->onHover();
+			}
+
+		}
+		else {
+			if (elements[i]->hovering) {
+				elements[i]->hovering = false;
+				elements[i]->onHoverEnd();
+			}
+		}
+
+		//onClick and stuff
+
+	}
+
+}

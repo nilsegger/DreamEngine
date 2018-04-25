@@ -46,7 +46,7 @@ void DreamEngine::UserInterface::Button::load()
 	background = new sf::RectangleShape;
 	background->setSize(size + sf::Vector2f{padding*2.f, padding*2.f});
 	background->setFillColor(CLR_BUTTON_BG);
-	background->setB
+	//background->setB
 }
 
 DreamEngine::ObjectData DreamEngine::UserInterface::Button::save()
