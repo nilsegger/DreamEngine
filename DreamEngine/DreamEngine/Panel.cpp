@@ -215,10 +215,12 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 				elements[i]->hovering = false;
 				elements[i]->onHoverEnd();
 			}
+
+			//break; // only want one element clicked and not multiple
+
 		}
 
-		break; // only want one element clicked and not multiple
-
+	
 	}
 
 }

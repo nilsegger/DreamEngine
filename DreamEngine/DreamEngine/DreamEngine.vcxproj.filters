@@ -222,6 +222,9 @@
     <ClCompile Include="UIElement.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UICheckbox.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -393,6 +396,9 @@
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
     <ClInclude Include="UIElement.h">
+      <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="UICheckbox.h">
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
   </ItemGroup>

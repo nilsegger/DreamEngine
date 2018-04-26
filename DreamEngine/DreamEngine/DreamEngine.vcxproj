@@ -155,6 +155,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIButton.cpp" />
+    <ClCompile Include="UICheckbox.cpp" />
     <ClCompile Include="UIElement.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WorldObject.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Text.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UICheckbox.h" />
     <ClInclude Include="UIColors.h" />
     <ClInclude Include="UIElement.h" />
     <ClInclude Include="Window.h" />

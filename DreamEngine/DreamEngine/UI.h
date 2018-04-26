@@ -6,7 +6,7 @@
 #include "Builder.h"
 #include "Panel.h"
 #include "PanelScene.h"
-
+#include "UICheckbox.h"
 #include "UIButton.h"
 namespace DreamEngine {
 
