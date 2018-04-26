@@ -51,14 +51,14 @@ void DreamEngine::UILauncher::init()
 	DreamEngine::UserInterface::PanelDef panelDef;
 	panelDef.id = 0;
 	panelDef.window = window;
-	panelDef.fontSize = {300.f,200.f};
+	panelDef.size = {300.f,200.f};
 
 	DreamEngine::UserInterface::Panel * panel = new DreamEngine::UserInterface::Panel(panelDef);
 
 	DreamEngine::UserInterface::PanelDef panelDef2;
 	panelDef2.id = 1;
 	panelDef2.window = window;
-	panelDef2.fontSize = { 300.f,200.f };
+	panelDef2.size = { 300.f,200.f };
 	panelDef2.position = { 300.f,200.f };
 
 	DreamEngine::UserInterface::Panel * panel2 = new DreamEngine::UserInterface::Panel(panelDef2);
@@ -67,6 +67,7 @@ void DreamEngine::UILauncher::init()
 	buttonDef.text = "Butttonn";
 	buttonDef.window = window;
 	buttonDef.type = "Panel Button1";
+	buttonDef.onClickFunc = &UILauncher::test;
 
 	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), sf::Vector2f{30,30});
 
@@ -97,4 +98,9 @@ bool DreamEngine::UILauncher::update()
 		init();
 	}
 	return window->isOpen();
+}
+
+void DreamEngine::UILauncher::test(DreamEngine::UserInterface::UIElement * element)
+{
+	std::cout << "Test was successfull" << std::endl;
 }

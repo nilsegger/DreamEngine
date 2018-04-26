@@ -20,6 +20,8 @@ namespace DreamEngine {
 		virtual void end() override;
 
 		virtual bool update() override;
+
+		static void test(DreamEngine::UserInterface::UIElement * element);
 	private:
 		DreamEngine::Window * window = nullptr;
 		DreamEngine::CameraManager * cameraManager = nullptr;

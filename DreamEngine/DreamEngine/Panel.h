@@ -8,13 +8,16 @@
 #include "UIColors.h"
 #include "UIElement.h"
 
+#include "Text.h"
+
 #define topbarsize	20
 
 namespace DreamEngine::UserInterface {
 
 	struct PanelDef : DrawableDef {
 		sf::Vector2f position = {0.f,0.f};
-		sf::Vector2f fontSize = { 100.f,100.f };
+		sf::Vector2f size = { 100.f,100.f };
+		std::string panelTitle = "Panel";
 	};
 
 	class Panel : public Drawable {
@@ -38,7 +41,7 @@ namespace DreamEngine::UserInterface {
 		void addUIElement(UIElement * element, sf::Vector2f offset);
 
 	private:
-		sf::Vector2f fontSize;
+		sf::Vector2f size;
 		sf::Vector2f position;
 
 		sf::RectangleShape * topbar = nullptr;
@@ -46,6 +49,9 @@ namespace DreamEngine::UserInterface {
 		sf::RectangleShape * close = nullptr;
 
 
+		std::string title;
+		Font * font = nullptr;
+		Text * text = nullptr;
 
 		Mouse mouse;
 		

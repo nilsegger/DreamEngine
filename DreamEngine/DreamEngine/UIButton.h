@@ -8,10 +8,12 @@
 #include "UIColors.h"
 #include "UIElement.h"
 
+#define bottomBorderHeight 1.f
+
 namespace DreamEngine::UserInterface {
 
 	struct ButtonDef : public UIElementDef {
-		//void(*onClickFunc)(DreamEngine::UI::Button*) = nullptr;
+		void (*onClickFunc)(DreamEngine::UserInterface::UIElement*) = nullptr;
 		int fontSize = 23;
 		std::string text = "DefaultButton";
 		bool clickable = true; //Not implemented
@@ -34,6 +36,17 @@ namespace DreamEngine::UserInterface {
 		virtual sf::Vector2f getBounds() override;
 
 		virtual void setPosition(sf::Vector2f absolutePos) override;
+
+		// Inherited via UIElement
+		virtual sf::Vector2f getPosition() override;
+
+		virtual void onClickBegin() override;
+
+		virtual void onClickEnd() override;
+
+		virtual void onHover() override;
+
+		virtual void onHoverEnd() override;
 	private:
 		//void onClickEvent();
 
@@ -50,9 +63,7 @@ namespace DreamEngine::UserInterface {
 
 		sf::Vector2f position = { 0,0 };
 
-	
-
-		//void (*onClickFunc)(DreamEngine::UI::Button*);
+		void (*onClickFunc)(DreamEngine::UserInterface::UIElement*);
 	};
 
 }
