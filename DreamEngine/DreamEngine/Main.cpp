@@ -9,6 +9,7 @@ int main() {
 	//assert(sf::Shader::isAvailable());
 	
 	de::Launchable * launchable = new de::UILauncher();
+	//de::Launchable * launchable = new GameTest();
 
 	launchable->init();
 
