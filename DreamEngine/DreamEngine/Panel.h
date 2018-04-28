@@ -11,6 +11,7 @@
 #include "Text.h"
 
 #define topbarsize	20
+#define ELEMENTSPADDING 10.f
 
 namespace DreamEngine::UserInterface {
 
@@ -38,7 +39,7 @@ namespace DreamEngine::UserInterface {
 
 		bool isFocused();
 
-		void addUIElement(UIElement * element, sf::Vector2f offset);
+		void addUIElement(UIElement * element, int row = 0, int cell = 0);
 
 	private:
 		sf::Vector2f size;
@@ -68,9 +69,12 @@ namespace DreamEngine::UserInterface {
 		// blocking other panels, so that only one is dragged per mouse click
 
 		std::vector<UIElement*> elements;
+		std::vector<std::vector<UIElement*>> rows;
+		sf::Vector2f rowsSize = {0.f,0.f};
 		void setElementsPositions();
 
 		void onElementsClickEvent();
+
 	};
 
 };

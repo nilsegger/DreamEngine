@@ -87,6 +87,8 @@ void DreamEngine::UserInterface::Panel::load()
 	for (int i = 0; i < int(elements.size()); i++) {
 		elements[i]->load();
 	}
+
+	setElementsPositions();
 }
 
 DreamEngine::ObjectData DreamEngine::UserInterface::Panel::save()
@@ -155,19 +157,29 @@ bool DreamEngine::UserInterface::Panel::isFocused()
 	return id == lastFocused;
 }
 
-void DreamEngine::UserInterface::Panel::addUIElement(UIElement * element, sf::Vector2f offset)
+/*void DreamEngine::UserInterface::Panel::addUIElement(UIElement * element, sf::Vector2f offset)
 {
 	elements.push_back(element);
 	element->setPosition(position + offset + sf::Vector2f{0, topbarsize});
 	element->offset = offset;
+}*/
+
+void DreamEngine::UserInterface::Panel::addUIElement(UIElement * element, int row, int cell)
+{
+	for (int i = int(rows.size()) - 1; i <= row; i++) rows.push_back(std::vector<UIElement*>());
+	for (int i = int(rows[row].size()) - 1; i <= cell; i++) rows[row].push_back(nullptr);
+
+	rows[row][cell] = element;
+	elements.push_back(element);
+	
 }
 
-void DreamEngine::UserInterface::Panel::setElementsPositions()
+/*void DreamEngine::UserInterface::Panel::setElementsPositions()
 {
 	for (int i = 0; i < int(elements.size()); i++) {
 		elements[i]->setPosition(position + elements[i]->offset + sf::Vector2f{ 0, topbarsize });
 	}
-}
+}*/
 
 void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 {
@@ -222,5 +234,41 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 
 	
 	}
+
+}
+
+void DreamEngine::UserInterface::Panel::setElementsPositions()
+{
+	sf::Vector2f offset = {ELEMENTSPADDING,ELEMENTSPADDING};
+
+	for (int r = 0; r < int(rows.size()); r++) {
+
+		float rowHeight = 0.f;
+
+		for (int e = 0; e < rows[r].size(); e++) {
+			if (rows[r][e] == nullptr) continue;
+			if (rows[r][e]->getBounds().y > rowHeight) rowHeight = rows[r][e]->getBounds().y;
+		}
+
+		for (int e = 0; e < rows[r].size(); e++) {
+			if (rows[r][e] == nullptr) continue;
+			
+			float localOffsetY = (rowHeight - rows[r][e]->getBounds().y) / 2.f;
+			rows[r][e]->setPosition(position + sf::Vector2f{ offset.x, offset.y + localOffsetY } +sf::Vector2f{0,topbarsize});
+
+			offset.x += ELEMENTSPADDING + rows[r][e]->getBounds().x;
+
+			if (offset.x > rowsSize.x) rowsSize.x = offset.x;
+		}
+
+		offset.y += rowHeight + ELEMENTSPADDING;
+		if (offset.y > rowsSize.y) rowsSize.y = offset.y;
+
+		offset.x = ELEMENTSPADDING;
+	}
+
+	size.x = rowsSize.x;
+	topbar->setSize(sf::Vector2f{ rowsSize.x , topbar->getSize().y });
+	body->setSize(rowsSize);
 
 }

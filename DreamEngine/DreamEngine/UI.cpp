@@ -69,11 +69,13 @@ void DreamEngine::UILauncher::init()
 	buttonDef.type = "Panel Button1";
 	buttonDef.onClickFunc = &UILauncher::test;
 
-	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), sf::Vector2f{30,30});
+	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), 0,0);
+
+	panel2->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), 0, 0);
 
 	DreamEngine::UserInterface::CheckboxDef checkboxDef;
 	checkboxDef.window = window;
-	panel->addUIElement(new DreamEngine::UserInterface::Checkbox(checkboxDef), sf::Vector2f{ 30,80 });
+	panel->addUIElement(new DreamEngine::UserInterface::Checkbox(checkboxDef), 1,0);
 	
 
 	panelScene->addPanel(panel);
