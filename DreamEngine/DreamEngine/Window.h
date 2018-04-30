@@ -34,7 +34,15 @@ namespace DreamEngine {
 		virtual void show(bool flag = true) override;
 		virtual sf::RenderWindow * getWindow() override;
 
+		// Inherited via Window
+		virtual std::string getTextEnteredUpdateCycle() override;
+		virtual std::string getTextEnteredDrawCycle() override;
+		virtual void updateDone() override;
+
+
 		void setCameraManager(CameraManager * cameraManager);
+
+		int getKeys();
 
 		Timer frameTimer;
 		FPSCounter fpsCounter;
@@ -47,6 +55,13 @@ namespace DreamEngine {
 		std::string title;
 		sf::Uint32 style;
 		sf::ContextSettings contextSettings;
+
+		std::string textEnteredUpdate = "";
+		std::string textEnteredDraw = "";
+
+		int getKeysCurrent = 0;
+		sf::Keyboard::Key pressedKeysDuringDrawCycle[1000];
+		int pressedKeysDuringDrawCycleSize = 0;
 	};
 
 };

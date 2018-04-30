@@ -37,6 +37,9 @@ void DreamEngine::Window::display()
 	if (cameraManager != nullptr) cameraManager->draw(window);
 	window->display();
 	frameTimer.restart();
+
+	textEnteredDraw = "";
+	pressedKeysDuringDrawCycleSize = 0;
 }
 
 void DreamEngine::Window::draw(DreamEngine::Core::Drawable * drawable)
@@ -65,22 +68,54 @@ void DreamEngine::Window::setCameraManager(CameraManager * cameraManager)
 	this->cameraManager = cameraManager;
 }
 
+int DreamEngine::Window::getKeys()
+{
+	if (getKeysCurrent < pressedKeysDuringDrawCycleSize) {
+		getKeysCurrent++;
+		return pressedKeysDuringDrawCycle[getKeysCurrent - 1];
+	}
+	getKeysCurrent = 0;
+	return 0;
+}
+
 void DreamEngine::Window::events()
 {
 	sf::Event events;
 	while (window->pollEvent(events)) {
 		switch (events.type)
 		{
-			/*case sf::Event::KeyPressed:
-			std::cout << events.key.code << std::endl;
-			break;*/
+			case sf::Event::KeyPressed:
+			//std::cout << events.key.code << std::endl;
+			pressedKeysDuringDrawCycle[pressedKeysDuringDrawCycleSize] = events.key.code;
+			pressedKeysDuringDrawCycleSize++;
+			break;
 		case sf::Event::Closed:
 			close();
+			break;
+		case sf::Event::TextEntered:
+			if (events.text.unicode < 128) {
+				textEnteredUpdate += static_cast<char>(events.text.unicode);
+				textEnteredDraw += static_cast<char>(events.text.unicode);
+			}
 			break;
 		default:
 			break;
 		}
 	}
 
+}
 
+std::string DreamEngine::Window::getTextEnteredUpdateCycle()
+{
+	return textEnteredUpdate;
+}
+
+std::string DreamEngine::Window::getTextEnteredDrawCycle()
+{
+	return textEnteredDraw;
+}
+
+void DreamEngine::Window::updateDone()
+{
+	textEnteredUpdate = "";
 }

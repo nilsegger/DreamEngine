@@ -225,6 +225,9 @@
     <ClCompile Include="UICheckbox.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UITextInput.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -402,6 +405,9 @@
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
     <ClInclude Include="UIElementsList.h">
+      <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="UITextInput.h">
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
   </ItemGroup>

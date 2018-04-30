@@ -68,8 +68,16 @@ void DreamEngine::UILauncher::init()
 	buttonDef.window = window;
 	buttonDef.type = "Panel Button1";
 	buttonDef.onClickFunc = &UILauncher::test;
-
+	buttonDef.fontSize = 15;
 	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), 0,0);
+	buttonDef.fontSize = 25;
+	panel->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), 0, 1);
+
+
+	DreamEngine::UserInterface::TextInputDef textInputDef;
+	textInputDef.window = window;
+	panel->addUIElement(new DreamEngine::UserInterface::TextInput(textInputDef), 2, 1);
+
 
 	panel2->addUIElement(new DreamEngine::UserInterface::Button(buttonDef), 0, 0);
 
@@ -90,6 +98,14 @@ void DreamEngine::UILauncher::init()
 
 void DreamEngine::UILauncher::end()
 {
+	window->close();
+	delete window;
+	delete cameraManager;
+	delete camera;
+	delete sceneManager;
+	delete builder;
+	delete dataManager;
+	delete panelScene;
 }
 
 bool DreamEngine::UILauncher::update()
@@ -100,10 +116,10 @@ bool DreamEngine::UILauncher::update()
 
 	sceneManager->baseUpdate();
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 		end();
 		init();
-	}
+	}*/
 	return window->isOpen();
 }
 

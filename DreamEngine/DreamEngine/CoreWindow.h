@@ -16,6 +16,11 @@ namespace DreamEngine::Core {
 		virtual void show(bool flag = true) = 0;
 		virtual sf::RenderWindow * getWindow() = 0;
 
+		virtual std::string getTextEnteredUpdateCycle() = 0;
+		virtual std::string getTextEnteredDrawCycle() = 0;
+
+		virtual void updateDone() = 0;
+		virtual int getKeys() = 0;
 		Timer frameTimer;
 	};
 

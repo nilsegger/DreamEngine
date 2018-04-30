@@ -8,6 +8,7 @@
 #include "PanelScene.h"
 #include "UICheckbox.h"
 #include "UIButton.h"
+#include "UITextInput.h"
 namespace DreamEngine {
 
 	class UILauncher : public Launchable {

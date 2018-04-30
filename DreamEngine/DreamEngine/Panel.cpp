@@ -22,6 +22,8 @@ void DreamEngine::UserInterface::Panel::draw()
 
 	onElementsClickEvent();
 
+	setElementsPositions();
+
 	if(isFocused()) body->setFillColor(CLR_PANEL_FOCUSED_BG);
 	else body->setFillColor(CLR_PANEL_UNFOCUSED_BG);
 
@@ -245,12 +247,12 @@ void DreamEngine::UserInterface::Panel::setElementsPositions()
 
 		float rowHeight = 0.f;
 
-		for (int e = 0; e < rows[r].size(); e++) {
+		for (int e = 0; e < int(rows[r].size()); e++) {
 			if (rows[r][e] == nullptr) continue;
 			if (rows[r][e]->getBounds().y > rowHeight) rowHeight = rows[r][e]->getBounds().y;
 		}
 
-		for (int e = 0; e < rows[r].size(); e++) {
+		for (int e = 0; e < int(rows[r].size()); e++) {
 			if (rows[r][e] == nullptr) continue;
 			
 			float localOffsetY = (rowHeight - rows[r][e]->getBounds().y) / 2.f;

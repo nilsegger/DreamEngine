@@ -157,6 +157,7 @@
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UICheckbox.cpp" />
     <ClCompile Include="UIElement.cpp" />
+    <ClCompile Include="UITextInput.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WorldObject.cpp" />
     <ClCompile Include="WorldObjectManager.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="UICheckbox.h" />
     <ClInclude Include="UIColors.h" />
     <ClInclude Include="UIElement.h" />
+    <ClInclude Include="UITextInput.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WorldObject.h" />
     <ClInclude Include="WorldObjectManager.h" />

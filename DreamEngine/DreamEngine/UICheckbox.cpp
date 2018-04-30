@@ -35,7 +35,7 @@ void DreamEngine::UserInterface::Checkbox::load()
 	textDef.txt = labelText;
 	textDef.position = position + sf::Vector2f{size.x, 0.f};
 	textDef.window = window;
-	textDef.fontSize = size.y - 3;
+	textDef.fontSize = int(size.y - 3);
 	text = new Text(textDef);
 	text->load();
 }

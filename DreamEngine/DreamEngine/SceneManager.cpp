@@ -200,6 +200,7 @@ void DreamEngine::SceneManager::updateScene()
 	if (loopTimer.getElapsedTime() >= 1.f / 60.f) {
 		update(loopTimer.getElapsedTime());
 		loopTimer.restart();
+		window->updateDone();
 	}
 }
 

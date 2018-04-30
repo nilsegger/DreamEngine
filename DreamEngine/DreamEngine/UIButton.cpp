@@ -41,8 +41,6 @@ void DreamEngine::UserInterface::Button::load()
 	text = new Text(textDef);
 	text->load();
 
-	std::cout << text->getText()->getLocalBounds().width << std::endl;
-
 	size = sf::Vector2f{ text->getText()->getLocalBounds().width,text->getText()->getLocalBounds().height } +sf::Vector2f{ padding*4.f,padding*4.f };
 
 	background = new sf::RectangleShape;
