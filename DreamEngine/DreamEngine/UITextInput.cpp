@@ -15,8 +15,11 @@ void DreamEngine::UserInterface::TextInput::draw()
 	text->setPosition(position + sf::Vector2f{ textPadding, textPadding } +sf::Vector2f{label->getText()->getLocalBounds().width, 0.f});
 	
 
-	size = { text->getText()->getLocalBounds().width + 2.f*textPadding,fontSize + 2.f*textPadding };
-
+	if (enteredText != "") {
+		size = { text->getText()->getLocalBounds().width + 2.f*textPadding,fontSize + 2.f*textPadding };
+		if (size.x < 100.f) size.x = 100.f;
+	}
+	else { size = { 100.f ,fontSize + 2.f*textPadding }; }
 	background->setSize(size);
 	background->setPosition(position + sf::Vector2f{ label->getText()->getLocalBounds().width, 0.f });
 
@@ -39,7 +42,7 @@ void DreamEngine::UserInterface::TextInput::load()
 	TextDef textDef;
 	textDef.fontSize = fontSize;
 	textDef.font = font;
-	textDef.txt = "Click to enter text..";
+	textDef.txt = "";
 	textDef.color = sf::Color::Black;
 	textDef.window = window;
 	text = new Text(textDef);
@@ -85,6 +88,21 @@ void DreamEngine::UserInterface::TextInput::onHover()
 
 void DreamEngine::UserInterface::TextInput::onHoverEnd()
 {
+}
+
+std::string DreamEngine::UserInterface::TextInput::getString()
+{
+	return enteredText;
+}
+
+int DreamEngine::UserInterface::TextInput::getInt()
+{
+	return std::stoi(enteredText);
+}
+
+float DreamEngine::UserInterface::TextInput::getFloat()
+{
+	return std::stof(enteredText);
 }
 
 void DreamEngine::UserInterface::TextInput::addText(std::string txt)

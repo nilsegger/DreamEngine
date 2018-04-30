@@ -27,6 +27,11 @@ namespace DreamEngine::UserInterface{
 		virtual void onClickEnd() override;
 		virtual void onHover() override;
 		virtual void onHoverEnd() override;
+
+		std::string getString();
+		int getInt();
+		float getFloat();
+
 	private:
 		sf::Vector2f position;
 		sf::Vector2f size;
@@ -41,7 +46,7 @@ namespace DreamEngine::UserInterface{
 
 		bool empty = true;
 
-		std::string enteredText = "Click to enter text..";
+		std::string enteredText = "";
 		float cursorPosition = 0.f;
 		void addText(std::string txt);
 
