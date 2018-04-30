@@ -7,6 +7,9 @@ DreamEngine::CameraManager::CameraManager()
 
 DreamEngine::CameraManager::~CameraManager()
 {
+	for (Camera * c = (Camera*)getFirst(); c != nullptr; c = (Camera*)getNext()) {
+		delete c;
+	}
 }
 
 DreamEngine::Camera * DreamEngine::CameraManager::get(Cameras camera)

@@ -19,11 +19,11 @@ void DreamEngine::UILauncher::init()
 	DreamEngine::CameraDef cameraDef;
 	cameraDef.window = window->getWindow();
 	cameraDef.windowSize = { 1280,720 };
-	cameraDef.id = 0; // unfocusedPanel
+	cameraDef.id = Cameras::unfocusedPanel; // unfocusedPanel
 
 	cameraManager->add(new DreamEngine::Camera(cameraDef), true);
 
-	cameraDef.id = 1;
+	cameraDef.id = Cameras::focusedPanel;
 	cameraManager->add(new DreamEngine::Camera(cameraDef), true);
 
 	DreamEngine::Builder * builder = new DreamEngine::Builder;

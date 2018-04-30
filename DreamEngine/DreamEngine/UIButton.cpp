@@ -75,14 +75,11 @@ sf::Vector2f DreamEngine::UserInterface::Button::getPosition()
 
 void DreamEngine::UserInterface::Button::onClickBegin()
 {
-	std::cout << "Click begin" << std::endl;
 	if(onClickFunc != nullptr) onClickFunc(this);
 }
 
 void DreamEngine::UserInterface::Button::onClickEnd()
 {
-	std::cout << "Click End" << std::endl;
-
 }
 
 void DreamEngine::UserInterface::Button::onHover()

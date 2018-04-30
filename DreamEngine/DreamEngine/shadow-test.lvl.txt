@@ -11,7 +11,7 @@ verticeX2	500
 verticeY2	500
 verticeX3	0
 verticeY3	500
-scene	1
+scene	0
 -	-
 type	polygonshape
 id	0
@@ -31,7 +31,7 @@ density	1000
 friction	1000
 restitution	1000
 drawable	0
-scene	1
+scene	0
 -	-
 type	polygondrawable
 id	1
@@ -46,7 +46,7 @@ verticeX2	12800
 verticeY2	500
 verticeX3	0
 verticeY3	500
-scene	1
+scene	0
 -	-
 type	polygonshape
 id	1
@@ -66,10 +66,10 @@ density	1000
 friction	1000
 restitution	1000
 drawable	1
-scene	1
+scene	0
 -	-
-type	default-sprite
-scene	1
+type	default-sprite-
+scene	0
 id	63
 positionX	0
 positionY	0

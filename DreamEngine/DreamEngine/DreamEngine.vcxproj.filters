@@ -66,21 +66,21 @@
     <Filter Include="assets">
       <UniqueIdentifier>{aa7e1782-43d9-40fc-8fa6-4a8e1b4b87d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DreamEngine\Sprite Animator">
-      <UniqueIdentifier>{4b6caf9f-e27c-4164-b9f8-1e4fa973ced8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DreamEngine\Game">
       <UniqueIdentifier>{1985698b-f238-4fb1-a42c-eaef49818de5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DreamEngine\Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="DreamEngine\Menu">
       <UniqueIdentifier>{553e4464-89f8-4715-abd3-8013cf3eb5bb}</UniqueIdentifier>
     </Filter>
     <Filter Include="DreamEngine\ui">
       <UniqueIdentifier>{acf7cd6a-8a90-41d7-aaf9-ce31c752d7ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DreamEngine\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="DreamEngine\editor">
+      <UniqueIdentifier>{f829e47b-550d-4513-86c7-8b1538130807}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -371,9 +371,6 @@
     <ClInclude Include="GameTest.h">
       <Filter>DreamEngine\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Editor.h">
-      <Filter>DreamEngine</Filter>
-    </ClInclude>
     <ClInclude Include="CoreButton.h">
       <Filter>DreamEngine\Menu</Filter>
     </ClInclude>
@@ -409,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="UITextInput.h">
       <Filter>DreamEngine\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>DreamEngine\editor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
