@@ -273,4 +273,5 @@ void DreamEngine::UserInterface::Panel::setElementsPositions()
 	topbar->setSize(sf::Vector2f{ rowsSize.x , topbar->getSize().y });
 	body->setSize(rowsSize);
 
+	rowsSize = { 0.f,0.f };
 }
