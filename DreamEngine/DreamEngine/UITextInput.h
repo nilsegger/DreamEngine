@@ -46,6 +46,11 @@ namespace DreamEngine::UserInterface{
 		void addText(std::string txt);
 
 		bool deletePressed = false;
+		bool focused = false;
+
+		// Inherited via UIElement
+		virtual void onFocus() override;
+		virtual void onFocusLost() override;
 	};
 
 };

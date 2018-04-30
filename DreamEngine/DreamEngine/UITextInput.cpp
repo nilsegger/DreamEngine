@@ -39,7 +39,7 @@ void DreamEngine::UserInterface::TextInput::load()
 	TextDef textDef;
 	textDef.fontSize = fontSize;
 	textDef.font = font;
-	textDef.txt = "Focus to enter text..";
+	textDef.txt = "Click to enter text..";
 	textDef.color = sf::Color::Black;
 	textDef.window = window;
 	text = new Text(textDef);
@@ -89,6 +89,9 @@ void DreamEngine::UserInterface::TextInput::onHoverEnd()
 
 void DreamEngine::UserInterface::TextInput::addText(std::string txt)
 {
+
+	if (focused == false) return;
+
 	if (txt != "") {
 		if (empty) {
 			enteredText = txt;
@@ -115,4 +118,16 @@ void DreamEngine::UserInterface::TextInput::addText(std::string txt)
 
 	
 
+}
+
+void DreamEngine::UserInterface::TextInput::onFocus()
+{
+	std::cout << "Focus gained" << std::endl;
+	focused = true;
+}
+
+void DreamEngine::UserInterface::TextInput::onFocusLost()
+{
+	focused = false;
+	std::cout << "Focus lost" << std::endl;
 }

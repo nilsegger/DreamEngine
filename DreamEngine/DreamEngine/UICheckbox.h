@@ -43,6 +43,10 @@ namespace DreamEngine::UserInterface {
 		Text * text = nullptr;
 
 		bool checked;
+
+		// Inherited via UIElement
+		virtual void onFocus() override;
+		virtual void onFocusLost() override;
 	};
 
 };

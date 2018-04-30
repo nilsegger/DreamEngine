@@ -92,3 +92,11 @@ bool DreamEngine::UserInterface::Checkbox::isChecked()
 {
 	return checked;
 }
+
+void DreamEngine::UserInterface::Checkbox::onFocus()
+{
+}
+
+void DreamEngine::UserInterface::Checkbox::onFocusLost()
+{
+}

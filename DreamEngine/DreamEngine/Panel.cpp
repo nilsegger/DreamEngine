@@ -187,19 +187,11 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 {
 	if (isFocused() == false) return;
 
+	bool elementClicked = false;
+
 	for (int i = 0; i < int(elements.size()); i++) {
 		
 		sf::Vector2f mousePos = mouse.getMouseScreenPosition();
-		
-		//Box collision
-
-		/*std::cout << "Element " << i << std::endl;
-		std::cout << "Element X " << elements[i]->getPosition().x << std::endl;
-		std::cout << "Element Y " << elements[i]->getPosition().y << std::endl;
-		std::cout << "Element Bounds X " << elements[i]->getBounds().x << std::endl;
-		std::cout << "Element Bounds Y " << elements[i]->getBounds().y << std::endl;
-		std::cout << "Mouse Pos" << mousePos.x << "#" << mousePos.y << std::endl;
-		Engine::waitForKeyPress();*/
 		if (mousePos.x >= elements[i]->getPosition().x && mousePos.x <= elements[i]->getPosition().x + elements[i]->getBounds().x
 			&&mousePos.y >= elements[i]->getPosition().y && mousePos.y <= elements[i]->getPosition().y + elements[i]->getBounds().y) {
 
@@ -214,12 +206,20 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 				if (elements[i]->clicked == false) {
 					elements[i]->clicked = true;
 					elements[i]->onClickBegin();
+					elementClicked = true;
+
+					if (focusedElement != elements[i]) {
+						elements[i]->onFocus();
+						focusedElement = elements[i];
+						blockUnFocus = true;
+					}
 				}
 			}
 			else {
 				if (elements[i]->clicked) {
 					elements[i]->clicked = false;
 					elements[i]->onClickEnd();
+					elementClicked = true;
 				}
 			}
 
@@ -229,13 +229,18 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 				elements[i]->hovering = false;
 				elements[i]->onHoverEnd();
 			}
-
 			//break; // only want one element clicked and not multiple
-
 		}
 
 	
 	}
+	if (elementClicked == false && mouse.leftIsClicked() == true && blockUnFocus == false) {
+		if (focusedElement != nullptr) {
+			focusedElement->onFocusLost();
+		}
+		focusedElement = nullptr;
+	}
+	if (mouse.leftIsClicked() == false) blockUnFocus = false;
 
 }
 

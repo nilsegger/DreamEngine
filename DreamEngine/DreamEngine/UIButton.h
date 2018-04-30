@@ -64,6 +64,10 @@ namespace DreamEngine::UserInterface {
 		sf::Vector2f position = { 0,0 };
 
 		void (*onClickFunc)(DreamEngine::UserInterface::UIElement*);
+
+		// Inherited via UIElement
+		virtual void onFocus() override;
+		virtual void onFocusLost() override;
 	};
 
 }

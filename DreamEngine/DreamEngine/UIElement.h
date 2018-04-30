@@ -21,6 +21,9 @@ namespace DreamEngine::UserInterface {
 		virtual void onHover() = 0;
 		virtual void onHoverEnd() = 0;
 
+		virtual void onFocus() = 0;
+		virtual void onFocusLost() = 0;
+
 		bool clicked = false;
 		bool hovering = false;
 	};

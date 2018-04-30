@@ -94,3 +94,11 @@ void DreamEngine::UserInterface::Button::onHoverEnd()
 {
 	background->setFillColor(CLR_BUTTON_BG);
 }
+
+void DreamEngine::UserInterface::Button::onFocus()
+{
+}
+
+void DreamEngine::UserInterface::Button::onFocusLost()
+{
+}

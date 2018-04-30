@@ -69,6 +69,8 @@ namespace DreamEngine::UserInterface {
 		// blocking other panels, so that only one is dragged per mouse click
 
 		std::vector<UIElement*> elements;
+		UIElement * focusedElement = nullptr;
+		bool blockUnFocus = false;
 		std::vector<std::vector<UIElement*>> rows;
 		sf::Vector2f rowsSize = {0.f,0.f};
 		void setElementsPositions();
