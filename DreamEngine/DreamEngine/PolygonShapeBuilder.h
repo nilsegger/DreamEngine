@@ -18,9 +18,5 @@ public:
 	virtual void build(DreamEngine::ObjectData data, std::string type) override;
 
 
-	// Inherited via ObjectBuilder
-	virtual std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>> getNecessaryObjectMembers() override;
-
-	virtual DreamEngine::ObjectData createObjectDataFromNecessaryObjectMembers(std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>) override;
 
 };

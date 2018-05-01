@@ -26,12 +26,13 @@ void PolygonDrawableBuilder::build(DreamEngine::ObjectData data, std::string typ
 	scene->drawables->add(new PolygonDrawable(polygonDrawableDef), true);
 }
 
-std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>> PolygonDrawableBuilder::getNecessaryObjectMembers()
+DreamEngine::ObjectData PolygonDrawableBuilder::getExampleObject()
 {
-	return std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>();
-}
+	DreamEngine::ObjectData data;
 
-DreamEngine::ObjectData PolygonDrawableBuilder::createObjectDataFromNecessaryObjectMembers(std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>)
-{
-	return DreamEngine::ObjectData();
+	data.setInt("id", 0);
+	data.setb2Vec2("bodyPosition", b2Vec2{0.f,0.f});
+	data.
+
+	return data;
 }

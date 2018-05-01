@@ -11,6 +11,17 @@
 
 namespace DreamEngine {
 
+	enum ObjectDataType {
+		NONE, INT, FLOAT, STRING, BOOL, B2VEC2, VEC2F, 3++++
+
+
+
+
+
+		3
+
+	};
+
 	class ObjectData {
 	public:
 		ObjectData();
@@ -26,21 +37,21 @@ namespace DreamEngine {
 		sf::Vector2f getVec2f(std::string key, bool optional = true);
 		sf::Vector2i getVec2i(std::string key, bool optional = true);
 
-		void add(Pair<std::string, std::string> pair);
+		void add(Trio<std::string, std::string, ObjectDataType> pair);
 
-		void setString(std::string key, std::string val);
-		void setInt(std::string key, int val);
-		void setFloat(std::string key, float val);
-		void setBool(std::string key, bool flag);
-		void setb2Vec2(std::string key, b2Vec2 val);
-		void setVec2f(std::string key, sf::Vector2f val);
-		void setVec2i(std::string key, sf::Vector2i val);
+		void setString(std::string key, std::string val, ObjectDataType type = NONE);
+		void setInt(std::string key, int val, ObjectDataType type = NONE);
+		void setFloat(std::string key, float val, ObjectDataType type = NONE);
+		void setBool(std::string key, bool flag, ObjectDataType type = NONE);
+		void setb2Vec2(std::string key, b2Vec2 val, ObjectDataType type = NONE);
+		void setVec2f(std::string key, sf::Vector2f val, ObjectDataType type = NONE);
+		void setVec2i(std::string key, sf::Vector2i val, ObjectDataType type = NONE);
 
 		void print();
 
 		std::string toString();
 	private:
-		std::vector<Pair<std::string, std::string>> data;
+		std::vector<Trio<std::string, std::string, ObjectDataType>> data;
 		int getSize();
 		int last = 0;
 

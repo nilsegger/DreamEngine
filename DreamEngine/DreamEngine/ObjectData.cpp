@@ -58,50 +58,55 @@ sf::Vector2i DreamEngine::ObjectData::getVec2i(std::string key, bool optional)
 	return sf::Vector2i(getInt(key + "X", optional), getInt(key + "Y", optional));
 }
 
-void DreamEngine::ObjectData::add(Pair<std::string, std::string> pair)
+void DreamEngine::ObjectData::add(Trio<std::string, std::string, ObjectDataType> pair)
 {
 	data.push_back(pair);
 }
 
-void DreamEngine::ObjectData::setString(std::string key, std::string val)
+void DreamEngine::ObjectData::setString(std::string key, std::string val, ObjectDataType type)
 {
 	int index = getIndexOfKey(key);
 	if (index != -1) data[index].b = val;
-	else add({ key, val });
+	else {
+		if(type == NONE) add({ key, val, STRING });
+		else add({ key, val, type });
+	}
 }
 
-void DreamEngine::ObjectData::setInt(std::string key, int val)
+void DreamEngine::ObjectData::setInt(std::string key, int val, ObjectDataType type)
 {
-	setString(key, std::to_string(val));
+	if(type == NONE) setString(key, std::to_string(val), INT);
+	else setString(key, std::to_string(val), type);
 }
 
-void DreamEngine::ObjectData::setFloat(std::string key, float val)
+void DreamEngine::ObjectData::setFloat(std::string key, float val, ObjectDataType type)
 {
-	setInt(key, int(val * INT_TO_FLOAT));
+	if(type == NONE ) setInt(key, int(val * INT_TO_FLOAT), FLOAT);
+	else setInt(key, int(val * INT_TO_FLOAT), type);
 }
 
-void DreamEngine::ObjectData::setBool(std::string key, bool flag)
+void DreamEngine::ObjectData::setBool(std::string key, bool flag, ObjectDataType type)
 {
-	if (flag) setInt(key, 1);
-	else setInt(key, 0);
+	if (flag) setInt(key, 1, BOOL);
+	else setInt(key, 0, BOOL);
 }
 
-void DreamEngine::ObjectData::setb2Vec2(std::string key, b2Vec2 val)
+void DreamEngine::ObjectData::setb2Vec2(std::string key, b2Vec2 val, ObjectDataType type)
 {
-	setFloat(key + "X", val.x);
-	setFloat(key + "Y", val.y);
+	setFloat(key + "X", val.x, B2VEC2);
+	setFloat(key + "Y", val.y, B2VEC2);
 }
 
-void DreamEngine::ObjectData::setVec2f(std::string key, sf::Vector2f val)
+void DreamEngine::ObjectData::setVec2f(std::string key, sf::Vector2f val, ObjectDataType type)
 {
-	setFloat(key + "X", val.x);
-	setFloat(key + "Y", val.y);
+	setFloat(key + "X", val.x, VEC2F);
+	setFloat(key + "Y", val.y, VEC2F);
 }
 
-void DreamEngine::ObjectData::setVec2i(std::string key, sf::Vector2i val)
+void DreamEngine::ObjectData::setVec2i(std::string key, sf::Vector2i val, ObjectDataType type)
 {
-	setInt(key + "X", val.x);
-	setInt(key + "Y", val.y);
+	setInt(key + "X", val.x, VEC2I);
+	setInt(key + "Y", val.y, VEC2I);
 }
 
 void DreamEngine::ObjectData::print()
