@@ -41,3 +41,13 @@ void PolygonShapeBuilder::build(DreamEngine::ObjectData data, std::string type)
 	if (data.hasKey("id")) scene->shapes->add(shape, true);
 	else scene->shapes->add(shape, false);
 }
+
+std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>> PolygonShapeBuilder::getNecessaryObjectMembers()
+{
+	return std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>();
+}
+
+DreamEngine::ObjectData PolygonShapeBuilder::createObjectDataFromNecessaryObjectMembers(std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>)
+{
+	return DreamEngine::ObjectData();
+}

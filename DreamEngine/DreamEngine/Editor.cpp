@@ -84,7 +84,7 @@ void DreamEngine::Editor::initGame()
 	spriteBuilderDef.sceneManager = sceneManager;
 	spriteBuilderDef.window = window;
 
-	builder->addBuilder(new DreamEngine::SpriteBuilder(spriteBuilderDef));
+	//builder->addBuilder(new DreamEngine::SpriteBuilder(spriteBuilderDef));
 
 	DreamEngine::DefaultSceneDef defaultSceneDef;
 	defaultSceneDef.id = 0;

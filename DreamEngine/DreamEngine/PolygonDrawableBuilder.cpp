@@ -25,3 +25,13 @@ void PolygonDrawableBuilder::build(DreamEngine::ObjectData data, std::string typ
 	polygonDrawableDef.color = sf::Color::Green;
 	scene->drawables->add(new PolygonDrawable(polygonDrawableDef), true);
 }
+
+std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>> PolygonDrawableBuilder::getNecessaryObjectMembers()
+{
+	return std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>();
+}
+
+DreamEngine::ObjectData PolygonDrawableBuilder::createObjectDataFromNecessaryObjectMembers(std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>)
+{
+	return DreamEngine::ObjectData();
+}

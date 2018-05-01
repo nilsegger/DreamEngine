@@ -4,6 +4,11 @@
 
 namespace DreamEngine::UserInterface {
 
+
+	enum UIElementType {
+		FLOAT_TEXTINPUT, INT_FLOATINPUT, STRING_TEXTINPUT
+	};
+
 	struct UIElementDef : public DrawableDef {
 
 	};
