@@ -12,14 +12,7 @@
 namespace DreamEngine {
 
 	enum ObjectDataType {
-		NONE, INT, FLOAT, STRING, BOOL, B2VEC2, VEC2F, 3++++
-
-
-
-
-
-		3
-
+		NONE, INT, FLOAT, STRING, BOOL, B2VEC2, VEC2F, VEC2I, B2VEC2_ARRAY, B2VEC2_ARRAY_VALUE
 	};
 
 	class ObjectData {
@@ -36,6 +29,7 @@ namespace DreamEngine {
 		b2Vec2 getb2Vec2(std::string key, bool optional = true);
 		sf::Vector2f getVec2f(std::string key, bool optional = true);
 		sf::Vector2i getVec2i(std::string key, bool optional = true);
+		std::vector<b2Vec2> getb2Vec2Array(std::string key, bool optional = true);
 
 		void add(Trio<std::string, std::string, ObjectDataType> pair);
 
@@ -46,7 +40,7 @@ namespace DreamEngine {
 		void setb2Vec2(std::string key, b2Vec2 val, ObjectDataType type = NONE);
 		void setVec2f(std::string key, sf::Vector2f val, ObjectDataType type = NONE);
 		void setVec2i(std::string key, sf::Vector2i val, ObjectDataType type = NONE);
-
+		void setb2Vec2Array(std::string key, int count, b2Vec2 * arr, ObjectDataType type = NONE);
 		void print();
 
 		std::string toString();

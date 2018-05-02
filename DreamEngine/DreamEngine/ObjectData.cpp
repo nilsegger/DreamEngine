@@ -58,6 +58,17 @@ sf::Vector2i DreamEngine::ObjectData::getVec2i(std::string key, bool optional)
 	return sf::Vector2i(getInt(key + "X", optional), getInt(key + "Y", optional));
 }
 
+std::vector<b2Vec2> DreamEngine::ObjectData::getb2Vec2Array(std::string key, bool optional)
+{
+
+	int size = getInt(key, optional);
+	std::vector<b2Vec2> result;
+	for (int i = 0; i < size; i++) {
+		result.push_back({getFloat(key + "X" + std::to_string(i)), getFloat(key + "Y" + std::to_string(i)) });
+	}
+	return result;
+}
+
 void DreamEngine::ObjectData::add(Trio<std::string, std::string, ObjectDataType> pair)
 {
 	data.push_back(pair);
@@ -107,6 +118,15 @@ void DreamEngine::ObjectData::setVec2i(std::string key, sf::Vector2i val, Object
 {
 	setInt(key + "X", val.x, VEC2I);
 	setInt(key + "Y", val.y, VEC2I);
+}
+
+void DreamEngine::ObjectData::setb2Vec2Array(std::string key, int count, b2Vec2 * arr, ObjectDataType type)
+{
+	setInt(key, count, B2VEC2_ARRAY);
+	for (int i = 0; i < count; i++, arr++) {
+		setFloat(key + "X" + std::to_string(i), (*arr).x, B2VEC2_ARRAY_VALUE);
+		setFloat(key + "Y" + std::to_string(i), (*arr).y, B2VEC2_ARRAY_VALUE);
+	}
 }
 
 void DreamEngine::ObjectData::print()
