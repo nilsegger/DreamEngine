@@ -42,12 +42,23 @@ void PolygonShapeBuilder::build(DreamEngine::ObjectData data, std::string type)
 	else scene->shapes->add(shape, false);
 }
 
-std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>> PolygonShapeBuilder::getNecessaryObjectMembers()
+DreamEngine::ObjectData PolygonShapeBuilder::getExampleObject()
 {
-	return std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>();
-}
-
-DreamEngine::ObjectData PolygonShapeBuilder::createObjectDataFromNecessaryObjectMembers(std::vector<Trio<std::string, DreamEngine::UserInterface::UIElementType, std::string>>)
-{
-	return DreamEngine::ObjectData();
+	DreamEngine::ObjectData data;
+	data.setString("type", "polygonshape");
+	data.setInt("id", 0);
+	data.setInt("scene", 0);
+	data.setInt("bodytype", 0);
+	data.setInt("drawable", 1);
+	data.setb2Vec2("bodyPosition", b2Vec2{ 0.f,0.f });
+	b2Vec2 vertices[4];
+	vertices[0] = { 0,0 };
+	vertices[1] = { 0.5f,0 };
+	vertices[2] = { 0.5f,0.5f };
+	vertices[3] = { 0,.5f };
+	data.setb2Vec2Array("vertices", 4, vertices);
+	data.setFloat("density", 1.f);
+	data.setFloat("friction", 1.f);
+	data.setFloat("restitution", 1.f);
+	return data;
 }

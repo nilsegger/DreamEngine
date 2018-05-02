@@ -35,3 +35,8 @@ void DreamEngine::Builder::addBuilder(Core::ObjectBuilder * builder)
 {
 	builders.push_back(builder);
 }
+
+std::vector<DreamEngine::Core::ObjectBuilder*> DreamEngine::Builder::getBuilder()
+{
+	return builders;
+}

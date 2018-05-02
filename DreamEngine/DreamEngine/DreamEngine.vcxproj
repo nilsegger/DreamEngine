@@ -129,6 +129,7 @@
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="DrawableManager.cpp" />
     <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="EditorPanelBuilder.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FPSCounter.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BodyBuilder.h" />
     <ClInclude Include="Builder.h" />
+    <ClInclude Include="EditorPanelBuilder.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />

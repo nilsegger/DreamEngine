@@ -91,8 +91,8 @@ void GameTest::init()
 	spriteBuilderDef.sceneManager = sceneManager;
 	spriteBuilderDef.window = window;
 
-	spriteBuilder = new DreamEngine::SpriteBuilder(spriteBuilderDef);
-	builder->addBuilder(spriteBuilder);
+	//spriteBuilder = new DreamEngine::SpriteBuilder(spriteBuilderDef);
+	//builder->addBuilder(spriteBuilder);
 
 	DreamEngine::DefaultSceneDef defaultSceneDef;
 	defaultSceneDef.id = 1;

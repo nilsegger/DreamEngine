@@ -29,10 +29,15 @@ void PolygonDrawableBuilder::build(DreamEngine::ObjectData data, std::string typ
 DreamEngine::ObjectData PolygonDrawableBuilder::getExampleObject()
 {
 	DreamEngine::ObjectData data;
-
+	data.setString("type", "polgyondrawable");
 	data.setInt("id", 0);
+	data.setInt("scene", 0);
 	data.setb2Vec2("bodyPosition", b2Vec2{0.f,0.f});
-	data.
-
+	b2Vec2 vertices[4];
+	vertices[0] = {0,0};
+	vertices[1] = { 0.5f,0 };
+	vertices[2] = { 0.5f,0.5f };
+	vertices[3] = { 0,.5f };
+	data.setb2Vec2Array("vertices", 4, vertices);
 	return data;
 }

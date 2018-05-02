@@ -138,6 +138,11 @@ void DreamEngine::ObjectData::print()
 	std::cout << "---" << std::endl;
 }
 
+std::vector<Trio<std::string, std::string, DreamEngine::ObjectDataType>> DreamEngine::ObjectData::getData()
+{
+	return data;
+}
+
 std::string DreamEngine::ObjectData::toString()
 {
 	std::string objectData = "";

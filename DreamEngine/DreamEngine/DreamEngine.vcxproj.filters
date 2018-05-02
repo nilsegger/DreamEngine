@@ -228,6 +228,9 @@
     <ClCompile Include="UITextInput.cpp">
       <Filter>DreamEngine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EditorPanelBuilder.cpp">
+      <Filter>DreamEngine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Objects.h">
@@ -408,6 +411,9 @@
       <Filter>DreamEngine\ui</Filter>
     </ClInclude>
     <ClInclude Include="Editor.h">
+      <Filter>DreamEngine\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorPanelBuilder.h">
       <Filter>DreamEngine\editor</Filter>
     </ClInclude>
   </ItemGroup>

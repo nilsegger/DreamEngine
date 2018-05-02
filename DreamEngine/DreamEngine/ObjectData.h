@@ -43,6 +43,8 @@ namespace DreamEngine {
 		void setb2Vec2Array(std::string key, int count, b2Vec2 * arr, ObjectDataType type = NONE);
 		void print();
 
+		std::vector<Trio<std::string, std::string, ObjectDataType>> getData(); //Key, value, Type
+
 		std::string toString();
 	private:
 		std::vector<Trio<std::string, std::string, ObjectDataType>> data;

@@ -15,6 +15,7 @@ namespace DreamEngine {
 		virtual void build(std::vector<ObjectData> data, float * progress) override;
 
 		void addBuilder(Core::ObjectBuilder * builder);
+		std::vector<Core::ObjectBuilder*> getBuilder();
 	private:
 		std::vector<Core::ObjectBuilder*> builders;
 	};

@@ -16,10 +16,10 @@ struct Trio {
 	A a;
 	B b;
 	C c;
-	bool operator==(const Pair& pair) {
+	bool operator==(const Trio& pair) {
 		return (this->a == pair.a) && (this->b == pair.b) && (this->c == pair.c);
 	}
-	bool operator!=(const Pair& pair) {
+	bool operator!=(const Trio& pair) {
 		return !((this->a == pair.a) && (this->b == pair.b) && (this->c == pair.c));
 	}
 };

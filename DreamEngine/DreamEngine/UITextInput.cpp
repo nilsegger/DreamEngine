@@ -1,7 +1,7 @@
 #include "UITextInput.h"
 
 DreamEngine::UserInterface::TextInput::TextInput(TextInputDef def)
-	:UIElement(def), fontSize(def.fontSize), maxWidth(def.maxWidth), textPadding(def.textPadding)
+	:UIElement(def), fontSize(def.fontSize), maxWidth(def.maxWidth), textPadding(def.textPadding), type(def.type)
 {
 }
 
@@ -10,6 +10,7 @@ void DreamEngine::UserInterface::TextInput::draw()
 
 	addText(window->getTextEnteredDrawCycle());
 	
+	label->setText(labelText);
 	label->setPosition(position);
 
 	text->setPosition(position + sf::Vector2f{ textPadding, textPadding } +sf::Vector2f{label->getText()->getLocalBounds().width, 0.f});
@@ -90,6 +91,17 @@ void DreamEngine::UserInterface::TextInput::onHoverEnd()
 {
 }
 
+void DreamEngine::UserInterface::TextInput::setLabel(std::string txt)
+{
+	labelText = txt;
+}
+
+void DreamEngine::UserInterface::TextInput::setText(std::string txt)
+{
+	empty = false;
+	enteredText = txt;
+}
+
 std::string DreamEngine::UserInterface::TextInput::getString()
 {
 	return enteredText;
@@ -103,6 +115,11 @@ int DreamEngine::UserInterface::TextInput::getInt()
 float DreamEngine::UserInterface::TextInput::getFloat()
 {
 	return std::stof(enteredText);
+}
+
+DreamEngine::ObjectDataType DreamEngine::UserInterface::TextInput::getType()
+{
+	return type;
 }
 
 void DreamEngine::UserInterface::TextInput::addText(std::string txt)

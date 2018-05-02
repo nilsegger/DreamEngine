@@ -17,6 +17,7 @@ public:
 	// Inherited via ObjectBuilder
 	virtual void build(DreamEngine::ObjectData data, std::string type) override;
 
+	virtual DreamEngine::ObjectData getExampleObject() override;
 
 
 };

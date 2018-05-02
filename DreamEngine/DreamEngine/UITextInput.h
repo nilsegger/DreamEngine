@@ -2,6 +2,7 @@
 
 #include "UIElement.h"
 #include "Text.h"
+#include "ObjectData.h"
 
 namespace DreamEngine::UserInterface{
 
@@ -9,12 +10,13 @@ namespace DreamEngine::UserInterface{
 		int fontSize = 23;
 		float maxWidth = 100.f;
 		float textPadding = 5.f;
+		ObjectDataType type = NONE;
 	};
 
 	class TextInput : public UIElement {
 	public:
 		TextInput(TextInputDef def);
-
+		
 		// Inherited via UIElement
 		virtual void draw() override;
 		virtual void onDestroy() override;
@@ -28,10 +30,13 @@ namespace DreamEngine::UserInterface{
 		virtual void onHover() override;
 		virtual void onHoverEnd() override;
 
+		void setLabel(std::string txt);
+		void setText(std::string txt);
 		std::string getString();
 		int getInt();
 		float getFloat();
 
+		ObjectDataType getType();
 	private:
 		sf::Vector2f position;
 		sf::Vector2f size;
@@ -46,6 +51,7 @@ namespace DreamEngine::UserInterface{
 
 		bool empty = true;
 
+		std::string labelText = "";
 		std::string enteredText = "";
 		float cursorPosition = 0.f;
 		void addText(std::string txt);
@@ -56,6 +62,8 @@ namespace DreamEngine::UserInterface{
 		// Inherited via UIElement
 		virtual void onFocus() override;
 		virtual void onFocusLost() override;
+
+		ObjectDataType type;
 	};
 
 };
