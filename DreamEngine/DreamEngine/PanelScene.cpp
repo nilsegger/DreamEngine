@@ -7,7 +7,7 @@ DreamEngine::PanelScene::PanelScene(PanelSceneDef def)
 
 void DreamEngine::PanelScene::addPanel(UserInterface::Panel * panel)
 {
-	panel->load();
+	//panel->load();
 	panels.push_back(panel);
 }
 
@@ -30,6 +30,12 @@ void DreamEngine::PanelScene::destroy()
 
 void DreamEngine::PanelScene::load(float * progress)
 {
+
+	for (int i = 0; i < int(panels.size()); i++) {
+		panels[i]->id = i;
+		panels[i]->load();
+	}
+
 	isReady = true;
 }
 

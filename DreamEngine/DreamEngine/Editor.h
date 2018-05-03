@@ -14,6 +14,8 @@
 #include "UIButton.h"
 #include "UITextInput.h"
 
+#include "EditorPanelBuilder.h"
+
 namespace DreamEngine {
 
 

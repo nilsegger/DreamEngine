@@ -48,7 +48,7 @@ namespace DreamEngine::UserInterface{
 		int fontSize;
 		float maxWidth;
 		float textPadding;
-
+		sf::Vector2f offsetLabelBox = {10.f,0.f};
 		bool empty = true;
 
 		std::string labelText = "";

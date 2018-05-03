@@ -13,8 +13,8 @@ void DreamEngine::UserInterface::TextInput::draw()
 	label->setText(labelText);
 	label->setPosition(position);
 
-	text->setPosition(position + sf::Vector2f{ textPadding, textPadding } +sf::Vector2f{label->getText()->getLocalBounds().width, 0.f});
-	
+	text->setPosition(position + sf::Vector2f{ textPadding, textPadding } +sf::Vector2f{label->getText()->getLocalBounds().width, 0.f} + offsetLabelBox);
+	if(empty == false) text->setText(enteredText);
 
 	if (enteredText != "") {
 		size = { text->getText()->getLocalBounds().width + 2.f*textPadding,fontSize + 2.f*textPadding };
@@ -22,7 +22,7 @@ void DreamEngine::UserInterface::TextInput::draw()
 	}
 	else { size = { 100.f ,fontSize + 2.f*textPadding }; }
 	background->setSize(size);
-	background->setPosition(position + sf::Vector2f{ label->getText()->getLocalBounds().width, 0.f });
+	background->setPosition(position + sf::Vector2f{ label->getText()->getLocalBounds().width, 0.f } +offsetLabelBox);
 
 	label->draw();
 	window->getWindow()->draw(*background);
@@ -62,7 +62,7 @@ DreamEngine::ObjectData DreamEngine::UserInterface::TextInput::save()
 
 sf::Vector2f DreamEngine::UserInterface::TextInput::getBounds()
 {
-	return size + sf::Vector2f{ label->getText()->getLocalBounds().width, 0.f };
+	return size + sf::Vector2f{ label->getText()->getLocalBounds().width, 0.f } +offsetLabelBox;
 }
 
 sf::Vector2f DreamEngine::UserInterface::TextInput::getPosition()

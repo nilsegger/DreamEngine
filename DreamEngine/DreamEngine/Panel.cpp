@@ -109,6 +109,7 @@ void DreamEngine::UserInterface::Panel::dragEvent()
 		if (mouse.leftIsClicked() == false || dragable == false) {
 			beingDragged = false;
 			panelIsBeingDragged = false;
+			std::cout << "Panel lost focus" << std::endl;
 			return;
 		}
 		position = mouse.getMouseScreenPosition() - dragOffset;
@@ -129,6 +130,7 @@ void DreamEngine::UserInterface::Panel::dragEvent()
 			beingDragged = true;
 			panelIsBeingDragged = true;
 			lastFocused = id;
+			std::cout << "Panel gained focus" << std::endl;
 		}
 
 
@@ -196,7 +198,6 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 			&&mousePos.y >= elements[i]->getPosition().y && mousePos.y <= elements[i]->getPosition().y + elements[i]->getBounds().y) {
 
 			
-
 			if (elements[i]->hovering == false) {
 				elements[i]->hovering = true;
 				elements[i]->onHover();
@@ -209,6 +210,7 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 					elementClicked = true;
 
 					if (focusedElement != elements[i]) {
+						if(focusedElement != nullptr) focusedElement->onFocusLost();
 						elements[i]->onFocus();
 						focusedElement = elements[i];
 						blockUnFocus = true;
@@ -237,6 +239,7 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 	if (elementClicked == false && mouse.leftIsClicked() == true && blockUnFocus == false) {
 		if (focusedElement != nullptr) {
 			focusedElement->onFocusLost();
+			
 		}
 		focusedElement = nullptr;
 	}

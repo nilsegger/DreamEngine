@@ -101,7 +101,11 @@ void DreamEngine::Editor::initUI()
 	panelSceneDef.cameraManager = cameraManager;
 	panelScene = new DreamEngine::PanelScene(panelSceneDef);
 
-	DreamEngine::UserInterface::PanelDef panelDef;
+
+	EditorPanelBuilder panelBuilder(builder, panelScene, window);
+	panelBuilder.createPanelsFromBuilders();
+
+	/*DreamEngine::UserInterface::PanelDef panelDef;
 	panelDef.id = 0;
 	panelDef.window = window;
 	panelDef.size = { 300.f,200.f };
@@ -136,7 +140,7 @@ void DreamEngine::Editor::initUI()
 	panel->addUIElement(new DreamEngine::UserInterface::Checkbox(checkboxDef), 1, 0);
 
 
-	panelScene->addPanel(panel);
+	panelScene->addPanel(panel);*/
 
 	sceneManager->add(panelScene,true);
 }

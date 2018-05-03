@@ -104,28 +104,28 @@ void DreamEngine::ObjectData::setBool(std::string key, bool flag, ObjectDataType
 
 void DreamEngine::ObjectData::setb2Vec2(std::string key, b2Vec2 val, ObjectDataType type)
 {
-	setFloat(key + "X", val.x, B2VEC2);
-	setFloat(key + "Y", val.y, B2VEC2);
+	setFloat(key + "X", val.x, B2VEC2_X);
+	setFloat(key + "Y", val.y, B2VEC2_Y);
 }
 
 void DreamEngine::ObjectData::setVec2f(std::string key, sf::Vector2f val, ObjectDataType type)
 {
-	setFloat(key + "X", val.x, VEC2F);
-	setFloat(key + "Y", val.y, VEC2F);
+	setFloat(key + "X", val.x, VEC2F_X);
+	setFloat(key + "Y", val.y, VEC2F_Y);
 }
 
 void DreamEngine::ObjectData::setVec2i(std::string key, sf::Vector2i val, ObjectDataType type)
 {
-	setInt(key + "X", val.x, VEC2I);
-	setInt(key + "Y", val.y, VEC2I);
+	setInt(key + "X", val.x, VEC2I_X);
+	setInt(key + "Y", val.y, VEC2I_Y);
 }
 
 void DreamEngine::ObjectData::setb2Vec2Array(std::string key, int count, b2Vec2 * arr, ObjectDataType type)
 {
-	setInt(key, count, B2VEC2_ARRAY);
+	setInt(key, count, B2VEC2_ARRAY_COUNT);
 	for (int i = 0; i < count; i++, arr++) {
-		setFloat(key + "X" + std::to_string(i), (*arr).x, B2VEC2_ARRAY_VALUE);
-		setFloat(key + "Y" + std::to_string(i), (*arr).y, B2VEC2_ARRAY_VALUE);
+		setFloat(key + "X" + std::to_string(i), (*arr).x, B2VEC2_ARRAY_VALUE_X);
+		setFloat(key + "Y" + std::to_string(i), (*arr).y, B2VEC2_ARRAY_VALUE_Y);
 	}
 }
 

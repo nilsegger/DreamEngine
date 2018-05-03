@@ -9,7 +9,7 @@
 #include "UITextInput.h"
 #include "Window.h"
 
-#define FONTSIZE 20
+#define FONTSIZE 15
 
 namespace DreamEngine {
 
@@ -24,7 +24,9 @@ namespace DreamEngine {
 
 		void createPanel(Core::ObjectBuilder* builder);
 
-		void createUIElement(UserInterface::Panel * panel, Trio<std::string, std::string, ObjectDataType> data);
+		void createUIElement(UserInterface::Panel * panel, Trio<std::string, std::string, ObjectDataType> data, int &row, ObjectData objectData);
+
+		UserInterface::TextInput * createTextInput(std::string label, std::string value, DreamEngine::ObjectDataType type);
 	};
 
 };
