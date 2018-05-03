@@ -30,6 +30,13 @@ void DreamEngine::EditorPanelBuilder::createPanel(Core::ObjectBuilder * builder)
 	for (int i = 0; i < int(data.size()); i++) {
 		createUIElement(panel, data[i], row, objectData);
 	}
+
+	UserInterface::ButtonDef createButtonDef;
+	createButtonDef.window = window;
+	createButtonDef.fontSize = FONTSIZE;
+	createButtonDef.text = "Create";
+	panel->addUIElement(new UserInterface::Button(createButtonDef), row);
+
 	panelScene->addPanel(panel);
 }
 
@@ -65,6 +72,14 @@ void DreamEngine::EditorPanelBuilder::createUIElement(UserInterface::Panel * pan
 		panel->addUIElement(createTextInput(data.a, std::to_string(objectData.getFloat(data.a)), data.c), row,1);
 		row++;
 		break;
+	case B2VEC2_ARRAY_VALUE_X:
+		panel->addUIElement(createTextInput(data.a, std::to_string(objectData.getFloat(data.a)), data.c), row);
+		break;
+	case B2VEC2_ARRAY_VALUE_Y:
+		panel->addUIElement(createTextInput(data.a, std::to_string(objectData.getFloat(data.a)), data.c), row, 1);
+		row++;
+		break;
+
 	default:
 		break;
 	}
