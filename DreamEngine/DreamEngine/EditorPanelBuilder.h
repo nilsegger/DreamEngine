@@ -9,7 +9,7 @@
 #include "UITextInput.h"
 #include "Window.h"
 
-#define FONTSIZE 15
+#define FONTSIZE 13
 
 namespace DreamEngine {
 

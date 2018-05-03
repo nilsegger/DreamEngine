@@ -11,7 +11,7 @@
 #include "Text.h"
 
 #define topbarsize	20
-#define ELEMENTSPADDING 10.f
+#define ELEMENTSPADDING 3.f
 
 namespace DreamEngine::UserInterface {
 
