@@ -102,7 +102,7 @@ void DreamEngine::Editor::initUI()
 	panelScene = new DreamEngine::PanelScene(panelSceneDef);
 
 
-	EditorPanelBuilder panelBuilder(builder, panelScene, window);
+	EditorPanelBuilder panelBuilder(builder, panelScene, window, dataManager);
 	panelBuilder.createPanelsFromBuilders();
 
 	/*DreamEngine::UserInterface::PanelDef panelDef;

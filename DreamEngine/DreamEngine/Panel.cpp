@@ -95,11 +95,9 @@ void DreamEngine::UserInterface::Panel::load()
 
 DreamEngine::ObjectData DreamEngine::UserInterface::Panel::save()
 {
-
 	for (int i = 0; i < int(elements.size()); i++) {
 		elements[i]->save();
 	}
-
 	return ObjectData();
 }
 
@@ -231,6 +229,7 @@ void DreamEngine::UserInterface::Panel::onElementsClickEvent()
 				elements[i]->hovering = false;
 				elements[i]->onHoverEnd();
 			}
+			
 			//break; // only want one element clicked and not multiple
 		}
 

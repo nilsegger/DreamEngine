@@ -41,6 +41,7 @@ namespace DreamEngine::UserInterface {
 
 		void addUIElement(UIElement * element, int row = 0, int cell = 0);
 
+		void * userData = nullptr;
 	private:
 		sf::Vector2f size;
 		sf::Vector2f position;

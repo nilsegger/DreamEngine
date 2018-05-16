@@ -1,8 +1,11 @@
 #include "EditorPanelBuilder.h"
 
-DreamEngine::EditorPanelBuilder::EditorPanelBuilder(Builder * builder, PanelScene * panelScene, Window * window)
-	:builders(builder->getBuilder()), panelScene(panelScene), window(window)
+DreamEngine::EditorPanelBuilder * DreamEngine::EditorPanelBuilder::editorBuilder = nullptr;
+
+DreamEngine::EditorPanelBuilder::EditorPanelBuilder(Builder * builder, PanelScene * panelScene, Window * window, DreamEngine::DataManager * dataManager)
+	:builders(builder->getBuilder()), panelScene(panelScene), window(window), dataManager(dataManager)
 {
+	editorBuilder = this;
 }
 
 void DreamEngine::EditorPanelBuilder::createPanelsFromBuilders()
@@ -35,6 +38,7 @@ void DreamEngine::EditorPanelBuilder::createPanel(Core::ObjectBuilder * builder)
 	createButtonDef.window = window;
 	createButtonDef.fontSize = FONTSIZE;
 	createButtonDef.text = "Create";
+	createButtonDef.onClickFunc = &EditorPanelBuilder::onCreateClick;
 	panel->addUIElement(new UserInterface::Button(createButtonDef), row);
 
 	panelScene->addPanel(panel);
@@ -95,4 +99,15 @@ DreamEngine::UserInterface::TextInput * DreamEngine::EditorPanelBuilder::createT
 	input->setText(value);
 	input->setLabel(label);
 	return input;
+}
+
+void DreamEngine::EditorPanelBuilder::onCreateClick(DreamEngine::UserInterface::UIElement * element)
+{
+	if (element->userData == nullptr) return;
+
+	ObjectData data = *(ObjectData*)element->userData;
+
+
+	editorBuilder->dataManager->save(data);
+	
 }

@@ -31,6 +31,10 @@ namespace DreamEngine::UserInterface {
 
 		bool clicked = false;
 		bool hovering = false;
+
+		void * userData = nullptr;
+
+		void * panelParent = nullptr;
 	};
 
 };
